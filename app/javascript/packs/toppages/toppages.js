@@ -1,9 +1,10 @@
-// $(function(){
+$(function(){
 
-//     $('h1').click(function(){
-//         $(this).css('color', 'red');
-//     });
+    $('.btn').click(function(){
+        $(this).css('background-color', 'red');
+        
+    });
 
-// });
+});
 
 import "stylesheets/toppages/toppages.scss";

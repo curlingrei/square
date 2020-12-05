@@ -2,8 +2,11 @@
     <h1>Toppages#index</h1>
 </div>
 <p>Find me in app/views/toppages/index.html.erb</p>
+<div class="col-sm-12 offset-lg-3 col-lg-6 offset-lg-3">
+    <img src="/assets/library.jpg">
+</div>
 
-<img src="/assets/library.jpg">
-
+<%= render 'toppages/signup' %>
+<%= render 'layouts/login' %>
 <%= javascript_pack_tag 'toppages/toppages' %>
 <%= stylesheet_pack_tag 'toppages/toppages' %>
