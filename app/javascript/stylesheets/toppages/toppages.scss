@@ -1,3 +1,126 @@
+// サイト見出し
 .title {
-    color: yellow;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+//登録系モーダル
+.modal {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal-content {
+    background-color: #e6ecf0;
+}
+
+.modal-header .close {
+    margin-left: 0;
+}
+
+.modal-title{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn {
+    background-color: #880000;
+    box-shadow: 0 6px #660000;
+    opacity: 1;
+}
+
+.btn:active{
+    box-shadow: none;
+    position:relative;
+    top: 6px;
+}
+.btn:hover {
+    opacity: 0.8;
+}
+
+//画像切り替えボタン
+.change-buttons {
+    text-align: center;
+}
+
+.c-button {
+    background-color: gray;
+    opacity: 0.5;
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    display: inline-block;
+    padding-right: 10px;
+}
+.clicked-btn {
+    background-color: black;
+}
+// 画像
+
+.image {
+    display: none;
+}
+
+img {
+    width: 100%;
+}
+
+.active {
+    display: block;
+}
+
+//画像の高さ調節
+@media(max-width: 576px){
+    img {
+        height: 150px;
+    }
+    //サイト見出し
+    .title h1 {
+        font-size: 20px;
+    }
+}
+
+@media(min-width: 577px) and (max-width: 960px){
+    img {
+        height: 270px;
+    }
+    .title h1 {
+        font-size: 25px;
+    }
+}
+
+@media(min-width: 961px){
+    img {
+        height: 400px;
+    }
+}
+
+// コンテンツ
+.contents-wrapper {
+    width: 100%;
+    height: auto;
+    background-color: #EEEEEE;
+    margin-top: 20px;
+}
+
+.contents {
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+.contents h5 {
+    padding-top: 20px
+}
+
+.contents img {
+    width: 100%;
+    height: auto;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.contents a {
+    display: inline-block;
+    padding-top: 20px;
 }

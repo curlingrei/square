@@ -1,9 +1,57 @@
 <div class="title">
-    <h1>Toppages#index</h1>
+    <h1 class="text-center">いつもの場所で新たな人や本と出会う</h1>
 </div>
-<p>Find me in app/views/toppages/index.html.erb</p>
+<div class="images-wrapper">
+    <div class="col-sm-12 offset-lg-2 col-lg-8 offset-lg-2">
+        <div class="images">
+            <li class="image active"><img src="/assets/library.jpg"></li>
+            <li class="image"><img src="/assets/library_groupspace.jpg"></li>
+            <li class="image"><img src="/assets/library_workingspace.jpg"></li>
+        </div>
+        <div class="change-buttons">
+            <div class="c-button clicked-btn"></div>
+            <div class="c-button"></div>
+            <div class="c-button"></div>
+        </div>
+</div>
 
-<img src="/assets/library.jpg">
+<div class="row">
+    <div class="col-lg-4 col-sm-6">
+        <div class="contents-wrapper">
+            <div class="contents">
+                <div class="content-title">
+                    <h5>ほんの紹介</h5>
+                </div>
+                <img src="/assets/book1.jpg" >
+                <a class="content-link" href="#">詳細はこちら</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4 col-sm-6">
+        <div class="contents-wrapper">
+            <div class="contents">
+                <div class="content-title">
+                    <h5>ほんの紹介</h5>
+                </div>
+                <img src="/assets/book1.jpg" >
+                <a class="content-link" href="#">詳細はこちら</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4 col-sm-6">
+        <div class="contents-wrapper">
+            <div class="contents">
+                <div class="content-title">
+                    <h5>ほんの紹介</h5>
+                </div>
+                <img src="/assets/book1.jpg" >
+                <a class="content-link" href="#">詳細はこちら</a>
+            </div>
+        </div>
+    </div>
+</div>
 
+<%= render 'toppages/signup' %>
+<%= render 'layouts/login' %>
 <%= javascript_pack_tag 'toppages/toppages' %>
 <%= stylesheet_pack_tag 'toppages/toppages' %>
