@@ -52,7 +52,7 @@ group :test do
   gem 'webdrivers'
 end
 
-#本番環境用
+# for production environment
 group :production do
   gem 'pg'
 end
