@@ -3,8 +3,13 @@
 
 <% if @users.any? %>
     <% @users.each do |user| %>
-            <%= user.username %>
+            <div class="name">
+              <%= user.username %>
+            </div>
             <p><%= link_to 'View profile', user_path(user) %></p>
     <% end %>
   <%= paginate @users %>
 <% end %>
+
+<%= javascript_pack_tag 'users/index' %>
+<%= stylesheet_pack_tag 'users/index' %>
