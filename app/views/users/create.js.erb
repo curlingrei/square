@@ -1,0 +1,11 @@
+<%# <% if @status == 'success' %> %>
+$("tbody").append();
+<% flash.each do |type, message| %>
+  $("#flash").html('<p class="alert alert-success"><%= type %><%= message %></p>')
+<% end %>
+$("#user-modal").modal("hide");
+console.log('success');
+<%# <%  elsif @status == 'fail' %> %>
+<%# alert('error!'); %>
+<%# <% end %> %>
+
