@@ -1,1 +1,1 @@
-import "stylesheets/users";
+import "stylesheets/users/index.scss";
