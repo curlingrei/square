@@ -8,6 +8,7 @@
         <%# <a class="nav-item nav-link" href="#" data-toggle="modal" data-target="#signup-modal">新規登録 </a> %>
         <% if logged_in? %>
           <%= link_to 'ログアウト', logout_path, method: :delete, class: 'nav-link nav-item' %>
+          <%= link_to '退会する',users_destroy_path, method: :delete, data:{confirm: '本当に削除してよろしいですか?'}, class: 'nav-item nav-link' %>
         <% else %>
           <%= link_to '新規登録', signup_path, class: 'nav-link nav-item' %>
           <%= link_to 'ログイン', login_path, class: 'nav-link nav-item' %>
