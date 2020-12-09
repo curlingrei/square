@@ -11,6 +11,7 @@
         <% else %>
           <%= link_to '新規登録', signup_path, class: 'nav-link nav-item' %>
           <%= link_to 'ログイン', login_path, class: 'nav-link nav-item' %>
+          <%= link_to 'ゲストログイン', guest_login_path, method: :post,  class: 'nav-link nav-item' %>
         <% end %>
         <%# <a class="nav-item nav-link" href="#" data-toggle="modal" data-target="#login">ログイン</a> %>
     </div>
