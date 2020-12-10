@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  get 'bookposts/index'
+  get 'bookposts/show'
+  get 'bookposts/new'
+  get 'bookposts/create'
+  get 'bookposts/edit'
+  get 'bookposts/update'
+  get 'bookposts/destroy'
   get 'sessions/new'
   get 'sessions/create'
   get 'sessions/destroy'
@@ -19,5 +26,6 @@ Rails.application.routes.draw do
   # for guest_user
   post 'guest_login', to: 'guest_login#create'
   resources :users
+  resources :bookposts
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
