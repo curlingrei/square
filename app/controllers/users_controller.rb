@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   # prevent users from modifying guest_user
   before_action :guest_user?, only: [:edit, :update, :destroy]
   def index
-    @users = User.all.page(params[:page]).per(1)
+    @users = User.all.page(params[:page]).per(5)
   end
 
   def show; end
