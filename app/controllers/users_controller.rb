@@ -53,7 +53,7 @@ class UsersController < ApplicationController
   end
   #ゲストユーザかどうかの判定
   def guest_user?
-    if current_user.email = 'guest@user.com' && current_user.password = password = 'guestuser'
+    if current_user.email == 'guest@user.com' && current_user.password == password = 'guestuser'
       flash[:warning] = 'ゲストユーザーの情報を変更したり削除することはできません'
       redirect_back(fallback_location: root_path)
     end
