@@ -2,4 +2,5 @@
 <p><%= @bookpost.description %></p>
 <p><%= @bookpost.category %></p>
 <p><%= @bookpost.user.username %></p>
-
+<%= link_to 'この投稿を編集する', edit_bookpost_path, class: 'btn btn-outline-sucess' %>
+<%= link_to 'この投稿を削除する',@bookpost, method: :delete, data:{confirm: '本当に削除してよろしいですか?'}, class: 'btn btn-outline-danger' %>
