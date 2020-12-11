@@ -5,8 +5,7 @@ class BookpostsController < ApplicationController
     @bookposts = Bookpost.all.page(params[:page]).per(5)
   end
 
-  def show
-  end
+  def show; end
 
   def new
     @bookpost = current_user.bookposts.build
@@ -17,14 +16,13 @@ class BookpostsController < ApplicationController
     if @bookpost.save
       flash[:success] = '投稿しました'
       redirect_to @bookpost
-    else 
+    else
       flash[:danger] = '投稿に失敗しました'
       render :new
     end
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
     if @bookpost.update_attributes(bookpost_params)
