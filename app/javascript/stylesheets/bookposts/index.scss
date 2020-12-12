@@ -6,7 +6,7 @@
     margin-top: 20px;
     position: relative;
     opacity: 1;
-
+    //リンク範囲を広げるための処理
     a {
         position: absolute;
         top: 0;
@@ -30,8 +30,6 @@
     margin-right: auto;
 
     p {
-        // height: 20px;
-        // z-index: 10;
         font-size: 6px;
         font-weight: bold;
     }
@@ -46,9 +44,6 @@
 }
 
 @media(max-width: 420px){
-    // #for-smartphone {
-    //     width: 50%;
-    // }
     .contents-wrapper {
         width: 100%;
     }
@@ -60,21 +55,3 @@
         }
     }
 }
-
-//tooltip
-
-// .content-title {
-//     position: relative;
-//     z-index: 1;
-// }
-// .tooltip {
-//     width: 300px;
-//     height: auto;
-//     // position: absolute;
-//     // top: 10px;
-//     // left: 10px;
-//     // z-index: 10;
-//     background-color: red;
-//     // display: block;
-// }
-
