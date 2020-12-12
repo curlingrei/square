@@ -6,4 +6,6 @@
             <p><%= link_to 'View profile', bookpost_path(bookpost) %></p>
     <% end %>
   <%= paginate @bookposts %>
+<% else %>
+  <p>投稿なし</p>
 <% end %>

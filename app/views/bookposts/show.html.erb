@@ -2,5 +2,20 @@
 <p><%= @bookpost.description %></p>
 <p><%= @bookpost.category %></p>
 <p><%= @bookpost.user.username %></p>
+
+<div class="col-4">
+    <div class="card">
+    <% if @bookpost.bookimage? %>
+      <%= image_tag @bookpost.bookimage.url %>
+    <% else %>
+      <img src="/assets/No_image.png">
+    <% end %>
+    <div class="card-body">
+        <h4 class="card-title"><%= @bookpost.title %></h4>
+        <p class="card-text"></p>
+        <p>テキスト</p>
+    </div>
+</div>
+        </div>
 <%= link_to 'この投稿を編集する', edit_bookpost_path, class: 'btn btn-outline-sucess' %>
 <%= link_to 'この投稿を削除する',@bookpost, method: :delete, data:{confirm: '本当に削除してよろしいですか?'}, class: 'btn btn-outline-danger' %>

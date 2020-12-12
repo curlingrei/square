@@ -17,6 +17,16 @@
         <%= f.label :description, '説明' %>
         <%= f.text_area :description, class: 'form-control', placeholder: 'この本の説明を書いてください' %>
       </div>
+
+      <div class='form-group'>
+        <%= f.label :bookimage, '画像' %>
+        <%= f.file_field :bookimage %>
+      </div>
+
+      <div class="form-group">
+        <%= f.check_box :remove_bookimage %>
+        デフォルトの画像に戻す
+      </div>
         <%= f.submit '確定', class: 'button' %>
     <% end %>
   </div>

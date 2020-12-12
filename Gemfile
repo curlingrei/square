@@ -65,3 +65,7 @@ gem 'kaminari'
 gem 'pry-byebug'
 
 gem 'rails_admin', '~> 2.0'
+
+gem 'carrierwave', '~> 2.0'
+
+gem 'rmagick'
