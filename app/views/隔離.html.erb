@@ -1,0 +1,19 @@
+bookposts/index.html.erb
+
+<% if @bookposts.any? %>
+    <% @bookposts.each do |bookpost| %>
+            <div class="name">
+              <%= bookpost.title %>
+            </div>
+            <p><%= link_to 'View profile', bookpost_path(bookpost) %></p>
+    <% end %>
+  <%= paginate @bookposts %>
+<% else %>
+  <p>投稿なし</p>
+<% end %>
+
+
+
+
+
+
