@@ -1,21 +1,44 @@
-<p><%= @bookpost.title %></p>
-<p><%= @bookpost.description %></p>
-<p><%= @bookpost.category %></p>
-<p><%= @bookpost.user.username %></p>
-
-<div class="col-4">
-    <div class="card">
-    <% if @bookpost.bookimage? %>
-      <%= image_tag @bookpost.bookimage.url %>
-    <% else %>
-      <img src="/assets/No_image.png">
-    <% end %>
-    <div class="card-body">
-        <h4 class="card-title"><%= @bookpost.title %></h4>
-        <p class="card-text"></p>
-        <p>テキスト</p>
+<div class="row entire_wrapper">
+  <div class="col-lg-4 col-sm-12">
+    <div class="image_wrapper">
+      <% if @bookpost.bookimage? %>
+        <%= image_tag @bookpost.bookimage.url %>
+      <% else %>
+        <img src="/assets/No_image.png">
+      <% end %>
     </div>
-</div>
+    <div class="row icons">
+      <div class="col-8">
+        <span class="badge badge-secondary"><%= @bookpost.category %></span>
+      </div>
+      <div class="col-4 icon">
+        <a href="#">♡</a>
+        <%= link_to '', edit_bookpost_path, class: 'fas fa-edit' %>
+        <%= link_to '',@bookpost, method: :delete, data:{confirm: '本当に削除してよろしいですか?'}, class: 'fas fa-trash-alt' %>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-8 col-sm-12">
+    <div class="wrapper">
+      <div class="title_wrapper">
+        <div class="title">
+          <h3><%= @bookpost.title %></h3>
         </div>
-<%= link_to 'この投稿を編集する', edit_bookpost_path, class: 'btn btn-outline-sucess' %>
-<%= link_to 'この投稿を削除する',@bookpost, method: :delete, data:{confirm: '本当に削除してよろしいですか?'}, class: 'btn btn-outline-danger' %>
+      </div>
+      <div class="description">
+        <h1><%= @bookpost.description %></h1>
+      </div>
+    </div>
+    <div class="other-info">
+        <% if @bookpost.user.avatar? %>
+          <%= image_tag @bookpost.user.avatar.url(:icon) %>
+        <% else %>
+          <img src="/assets/defalut_avatar.png">
+        <% end %>
+        <%= @bookpost.user.username %>
+        <%= @bookpost.updated_at.strftime("%Y-%-m-%-d %-H:%-M") %>
+    </div>
+  </div>
+</div>
+<%= javascript_pack_tag 'bookposts/show' %>
+<%= stylesheet_pack_tag 'bookposts/show' %>
