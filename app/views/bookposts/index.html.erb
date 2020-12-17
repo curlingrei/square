@@ -1,11 +1,28 @@
 <% if @bookposts.any? %>
-    <% @bookposts.each do |bookpost| %>
-            <div class="name">
-              <%= bookpost.title %>
+    <div class="row">
+      <% @bookposts.each do |bookpost| %>
+        <div class="col-lg-4 col-sm-6">
+          <div class="contents-wrapper">
+            <%= link_to '', bookpost %>
+            <div class="contents">
+              <div class="content-title">
+                <%= bookpost.title %>
+              </div>
+              <p><span class="badge badge-secondary"><%= bookpost.category %></span></p>
+              <% if bookpost.bookimage? %>
+                <%= image_tag bookpost.bookimage.url(:thumb) %>
+              <% else %>
+                <img src="/assets/No_image.png">
+              <% end %>
             </div>
-            <p><%= link_to 'View profile', bookpost_path(bookpost) %></p>
-    <% end %>
+          </div>
+        </div>
+      <% end %>
+    </div>
   <%= paginate @bookposts %>
 <% else %>
-  <p>投稿なし</p>
+  <p>まだ投稿がありません</p>
 <% end %>
+
+<%= javascript_pack_tag 'bookposts/index' %>
+<%= stylesheet_pack_tag 'bookposts/index' %>
