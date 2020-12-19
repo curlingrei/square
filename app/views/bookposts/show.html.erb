@@ -12,9 +12,13 @@
         <span class="badge badge-secondary"><%= @bookpost.category %></span>
       </div>
       <div class="col-4 icon">
-        <a href="#">♡</a>
-        <%= link_to '', edit_bookpost_path, class: 'fas fa-edit' %>
-        <%= link_to '',@bookpost, method: :delete, data:{confirm: '本当に削除してよろしいですか?'}, class: 'fas fa-trash-alt' %>
+        <% unless @bookpost.user == current_user %>
+          <%= render 'booklikes/booklike', class: 'good-btn' %>
+        <% end %>
+        <% if @bookpost.user == current_user %>
+          <%= link_to '', edit_bookpost_path, class: 'fas fa-edit' %>
+          <%= link_to '',@bookpost, method: :delete, data:{confirm: '本当に削除してよろしいですか?'}, class: 'fas fa-trash-alt' %>
+        <% end %>
       </div>
     </div>
   </div>

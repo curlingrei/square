@@ -2,10 +2,13 @@ class BookpostsController < ApplicationController
   before_action :set_bookpost, only: [:show, :edit, :update, :destroy]
   before_action :require_user_logged_in
   def index
-    @bookposts = current_user.bookposts.all.page(params[:page]).per(6)
+    @bookposts = Bookpost.all.page(params[:page]).per(6)
   end
 
-  def show; end
+  def show
+    @booklike = current_user.booklikes.new
+    @likedbookpost = Booklike.find_by(bookpost_id: @bookpost.id)
+  end
 
   def new
     @bookpost = current_user.bookposts.build
@@ -45,6 +48,6 @@ class BookpostsController < ApplicationController
   end
 
   def set_bookpost
-    @bookpost = current_user.bookposts.find_by(id: params[:id])
+    @bookpost = Bookpost.find_by(id: params[:id])
   end
 end
