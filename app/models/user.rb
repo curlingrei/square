@@ -8,4 +8,6 @@ class User < ApplicationRecord
                     uniqueness: { case_sensitive: false }
   has_many :bookposts
   mount_uploader :avatar, AvatarUploader
+  has_many :booklikes
+
 end
