@@ -1,15 +1,14 @@
 class BooklikesController < ApplicationController
   before_action :set_bookpost
+  
   def create
     current_user.booklike(@bookpost)
-    flash[:success] = 'いいねしました'
-    redirect_back(fallback_location: root_path)
+    @likedbookpost = Booklike.find_by(bookpost_id: @bookpost.id)
   end
 
   def destroy
     current_user.bookdislike(@bookpost)
-    flash[:primary] = 'いいねを解除しました'
-    redirect_back(fallback_location: root_path)
+    @booklike = current_user.booklikes.new
   end
 
   private
@@ -17,4 +16,5 @@ class BooklikesController < ApplicationController
   def set_bookpost
     @bookpost = Bookpost.find(params[:bookpost_id])
   end
+
 end

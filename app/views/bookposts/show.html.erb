@@ -13,7 +13,10 @@
       </div>
       <div class="col-4 icon">
         <% unless @bookpost.user == current_user %>
-          <%= render 'booklikes/booklike', class: 'good-btn' %>
+          <%# <%= render 'booklikes/booklike', class: 'good-btn' %> 
+          <div class="good-btn">
+              <%= render 'booklikes/booklike', bookpost: @bookpost %>
+          </div>
         <% end %>
         <% if @bookpost.user == current_user %>
           <%= link_to '', edit_bookpost_path, class: 'fas fa-edit' %>
