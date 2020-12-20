@@ -8,4 +8,18 @@ class User < ApplicationRecord
                     uniqueness: { case_sensitive: false }
   has_many :bookposts
   mount_uploader :avatar, AvatarUploader
+  has_many :booklikes
+
+  def booklike(bookpost)
+      self.booklikes.find_or_create_by(bookpost_id: bookpost.id) unless self.bookposts.include?(bookpost)
+  end
+
+  def bookdislike(bookpost)
+    target_booklike = self.booklikes.find_by(bookpost_id: bookpost.id)
+    target_booklike.destroy if target_booklike
+  end
+
+  def booklike?(bookpost)
+    self.booklikes.exists?(bookpost_id: bookpost.id)
+  end
 end
