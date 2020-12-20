@@ -7,6 +7,5 @@
   <%= form_with model: [bookpost, @booklike], method: :post do |f| %>
     <%= f.hidden_field :bookpost_id, :value => bookpost.id %>
     <%= f.submit '♡', class: 'submit-btn' %><%= bookpost.booklikes.count %>
-    
   <% end %>
 <% end %>
