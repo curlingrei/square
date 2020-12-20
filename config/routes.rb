@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'bookcomments/create'
+  get 'bookcomments/update'
+  get 'bookcomments/destroy'
   get 'booklikes/create'
   get 'booklikes/destroy'
   get 'sessions/new'
