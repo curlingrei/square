@@ -18,7 +18,8 @@ Rails.application.routes.draw do
   post 'guest_login', to: 'guest_login#create'
   resources :users
   resources :bookposts do
-    resources :booklikes, only: [:create, :update, :destroy]
+    resources :booklikes, only: [:create, :destroy]
+    resources :bookcomments, only: [:create, :update, :destroy]
   end
   resources :booklikes, only: [:create, :destroy]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
