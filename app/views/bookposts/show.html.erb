@@ -47,12 +47,15 @@
     </div>
   </div>
 </div>
+<h4><span><i class="far fa-comments"></i></span>コメント</h4>
 <div class="row">
-  <div class="col-12">
-    <%= render 'bookcomments/bookcomment_form', bookpost: @bookpost %>
+  <div class="col-sm-6">
+    <% unless @bookpost.user == current_user %>
+      <%= render 'bookcomments/bookcomment_form', bookpost: @bookpost %>
+    <% end %>
   </div>
 </div>
-<div class="col-6 bookcomments">
+<div class="col-sm-6 bookcomments">
   <%= render 'bookcomments/bookcomments', bookcomments: @bookcomments %>
 </div>
 <%= javascript_pack_tag 'bookposts/show' %>

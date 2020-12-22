@@ -1,11 +1,24 @@
 <% if bookcomments.any? %>
   <% bookcomments.each do |comment| %>
-  <div class="comment">
-    <%= comment.message %>
-    <%= comment.user.username %>
-    <%= comment.updated_at.strftime("%Y-%-m-%-d %-H:%-M") %>
-    <%= link_to '', bookpost_bookcomment_path(@bookpost, comment), method: :delete, remote: true,  class: 'fas fa-trash-alt'%>
-  </div>
+    <div class="comment-wrapper">
+       <div class="row comment-header">
+         <div class="col-6 comment-header-left">
+           <% if comment.user.avatar? %>
+             <%= image_tag comment.user.avatar.url(:icon) %>
+           <% else %>
+             <img src="/assets/defalut_avatar.png">
+           <% end %>
+             <%= comment.user.username %>
+         </div>
+        <div class="col-6 comment-header-right">
+          <%= comment.updated_at.strftime("%Y-%-m-%-d %-H:%-M") %>
+        </div>
+      </div>
+      <p class="comment-main"><%= comment.message %></p>
+      <div class="delete-btn">
+        <%= link_to '', bookpost_bookcomment_path(@bookpost, comment), method: :delete, remote: true,  class: 'fas fa-trash-alt'%>
+      </div>
+    </div>
   <% end %>
 <% else %>
   <p>コメントはありません</p>
