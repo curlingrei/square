@@ -1,0 +1,13 @@
+<%= form_with model: [bookpost, @bookcomment]  do |f| %>
+  <%# <div class="form-inline"> %>
+  <div id="error_message"></div>
+    <%= f.text_area :message, class: 'form-control', id: 'comment-form', placeholder: 'コメントを入力', rows: 2 %>
+    <%= f.hidden_field :bookpost_id, :value => bookpost.id %>
+    <%# <%= f.submit '<i class="fab fa-telegram-plane"></i>', id: 'comment-submit' %>
+    <div class = comment-submit-wrapper>
+      <%= button_tag type: 'submit', class: 'comment-submit' do %>
+        <i class="fab fa-telegram-plane"></i>
+      <% end %>
+    </div>
+  <%# </div> %>
+<% end %>

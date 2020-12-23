@@ -8,6 +8,8 @@ class BookpostsController < ApplicationController
   def show
     @booklike = current_user.booklikes.new
     @likedbookpost = Booklike.find_by(bookpost_id: @bookpost.id)
+    @bookcomment = current_user.bookcomments.new
+    @bookcomments = @bookpost.bookcomments
   end
 
   def new

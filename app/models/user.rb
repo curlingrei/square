@@ -9,6 +9,7 @@ class User < ApplicationRecord
   has_many :bookposts
   mount_uploader :avatar, AvatarUploader
   has_many :booklikes
+  has_many :bookcomments
 
   def booklike(bookpost)
       self.booklikes.find_or_create_by(bookpost_id: bookpost.id) unless self.bookposts.include?(bookpost)
@@ -21,5 +22,10 @@ class User < ApplicationRecord
 
   def booklike?(bookpost)
     self.booklikes.exists?(bookpost_id: bookpost.id)
+  end
+
+  def delete_bookcomment(comment)
+    target_comment = self.bookcomments.find_by(id: comment.id)
+    target_comment.destroy if target_comment
   end
 end

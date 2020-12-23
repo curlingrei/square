@@ -1,0 +1,8 @@
+<%= form_with model: [bookpost, @bookcomment]  do |f| %>
+  <%= f.text_area :message, class: 'form-control', rows: 2 %>
+  <%= f.hidden_field :bookpost_id, :value => bookpost.id %>
+  <%= f.submit '更新', class: 'btn-outline-primary' %>
+<% end %>
+<%= @target_comment.message %>
+<%= @target_comment.user.username %>
+<%= @target_comment.updated_at %>

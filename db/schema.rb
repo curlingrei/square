@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_19_094016) do
+ActiveRecord::Schema.define(version: 2020_12_20_135303) do
+
+  create_table "bookcomments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "bookpost_id", null: false
+    t.text "message"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["bookpost_id"], name: "index_bookcomments_on_bookpost_id"
+    t.index ["user_id"], name: "index_bookcomments_on_user_id"
+  end
 
   create_table "booklikes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "user_id", null: false
@@ -42,6 +52,8 @@ ActiveRecord::Schema.define(version: 2020_12_19_094016) do
     t.string "avatar"
   end
 
+  add_foreign_key "bookcomments", "bookposts"
+  add_foreign_key "bookcomments", "users"
   add_foreign_key "booklikes", "bookposts"
   add_foreign_key "booklikes", "users"
   add_foreign_key "bookposts", "users"

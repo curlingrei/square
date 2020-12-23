@@ -3,4 +3,5 @@ class Bookpost < ApplicationRecord
   validates :title, presence: true, length: { maximum: 255 }
   mount_uploader :bookimage, BookimageUploader
   has_many :booklikes
+  has_many :bookcomments
 end
