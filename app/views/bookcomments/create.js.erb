@@ -1,2 +1,3 @@
 $('.bookcomments').html("<%= j(render 'bookcomments/bookcomments', bookcomments: @bookcomments) %>");
+$('#error_message').html("<%= j(render 'layouts/error_messages', model: @bookcomment) %>");
 $('textarea').val('');

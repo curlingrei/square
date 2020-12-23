@@ -1,5 +1,5 @@
 <div class="row entire_wrapper">
-  <div class="col-lg-4 col-sm-12">
+  <div class="col-lg-4 col-md-6 col-sm-12">
     <div class="image_wrapper">
       <% if @bookpost.bookimage? %>
         <%= image_tag @bookpost.bookimage.url %>
@@ -25,7 +25,7 @@
       </div>
     </div>
   </div>
-  <div class="col-lg-8 col-sm-12">
+  <div class="col-lg-8 col-md-6 col-sm-12">
     <div class="wrapper">
       <div class="title_wrapper">
         <div class="title">
@@ -49,13 +49,13 @@
 </div>
 <h4><span><i class="far fa-comments"></i></span>コメント</h4>
 <div class="row">
-  <div class="col-sm-6">
+  <div class="col-lg-8 col-md-12">
     <% unless @bookpost.user == current_user %>
       <%= render 'bookcomments/bookcomment_form', bookpost: @bookpost %>
     <% end %>
   </div>
 </div>
-<div class="col-sm-6 bookcomments">
+<div class="col-lg-8 col-md-12 bookcomments">
   <%= render 'bookcomments/bookcomments', bookcomments: @bookcomments %>
 </div>
 <%= javascript_pack_tag 'bookposts/show' %>
