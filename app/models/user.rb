@@ -13,33 +13,33 @@ class User < ApplicationRecord
   has_many :commentlikes
 
   def booklike(bookpost)
-      self.booklikes.find_or_create_by(bookpost_id: bookpost.id) unless self.bookposts.include?(bookpost)
+    booklikes.find_or_create_by(bookpost_id: bookpost.id) unless bookposts.include?(bookpost)
   end
 
   def bookdislike(bookpost)
-    target_booklike = self.booklikes.find_by(bookpost_id: bookpost.id)
+    target_booklike = booklikes.find_by(bookpost_id: bookpost.id)
     target_booklike.destroy if target_booklike
   end
 
   def booklike?(bookpost)
-    self.booklikes.exists?(bookpost_id: bookpost.id)
+    booklikes.exists?(bookpost_id: bookpost.id)
   end
 
   def delete_bookcomment(comment)
-    target_comment = self.bookcomments.find_by(id: comment.id)
+    target_comment = bookcomments.find_by(id: comment.id)
     target_comment.destroy if target_comment
   end
 
   def comment_like(comment)
-    self.commentlikes.find_or_create_by(bookcomment_id: comment.id) unless self.commentlikes.include?(comment)
+    commentlikes.find_or_create_by(bookcomment_id: comment.id) unless commentlikes.include?(comment)
   end
 
   def comment_dislike(comment)
-    target_comment = self.commentlikes.find_by(bookcomment_id: comment.id)
+    target_comment = commentlikes.find_by(bookcomment_id: comment.id)
     target_comment.destroy if target_comment
   end
 
   def comment_like?(comment)
-    self.commentlikes.exists?(bookcomment_id: comment.id)
+    commentlikes.exists?(bookcomment_id: comment.id)
   end
 end

@@ -4,18 +4,9 @@ class BookcommentsController < ApplicationController
     @commentlike = current_user.commentlikes.new
     @bookcomment = current_user.bookcomments.build(bookcomment_params)
     true if @bookcomment.save
-
-      # flash[:success] = 'コメントを投稿しました'
-      # redirect_back(fallback_location: root_path)
   end
 
-  def update
-    @target_comment = Bookcomment.find_by(id: params[:id])
-    if @target_comment.update_attributes(bookcomment_params)
-      flash[:warning] = 'コメントを更新しました'
-      redirect_back(fallback_location: root_path)
-    end
-  end
+  def update; end
 
   def destroy
     @target_comment = Bookcomment.find_by(id: params[:id])
@@ -23,8 +14,6 @@ class BookcommentsController < ApplicationController
     @bookpost = @target_comment.bookpost
     @bookcomments = @bookpost.bookcomments
     @commentlike = current_user.commentlikes.new
-    # flash[:primary] = 'コメントを削除しました'
-    # redirect_back(fallback_location: root_path)
   end
 
   def bookcomment_params

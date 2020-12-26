@@ -1,6 +1,6 @@
 class BooklikesController < ApplicationController
   before_action :set_bookpost
-  
+
   def create
     current_user.booklike(@bookpost)
     @likedbookpost = Booklike.find_by(bookpost_id: @bookpost.id)
@@ -16,5 +16,4 @@ class BooklikesController < ApplicationController
   def set_bookpost
     @bookpost = Bookpost.find(params[:bookpost_id])
   end
-
 end
