@@ -15,9 +15,15 @@
         </div>
       </div>
       <p class="comment-main"><%= comment.message %></p>
-      <div class="delete-btn">
-        <%= link_to '', bookpost_bookcomment_path(@bookpost, comment), method: :delete, remote: true,  class: 'fas fa-trash-alt'%>
-      </div>
+      <% unless comment.user == current_user %>
+        <div id="commentlikes-<%= comment.id %>">
+          <%= render 'commentlikes/commentlike', comment: comment %>
+        </div>
+      <% else %>
+        <div class="delete-btn">
+          <%= link_to '', bookpost_bookcomment_path(@bookpost, comment), method: :delete, remote: true,  class: 'fas fa-trash-alt'%>
+        </div>
+      <% end %>
     </div>
   <% end %>
 <% else %>

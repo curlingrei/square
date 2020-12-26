@@ -3,5 +3,5 @@ class Bookcomment < ApplicationRecord
   belongs_to :bookpost
 
   validates :message, presence: true
-  has_many :commentlikes
+  has_many :commentlikes, dependent: :destroy
 end

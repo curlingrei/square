@@ -1,8 +1,10 @@
 class BookcommentsController < ApplicationController
   before_action :set_bookcomments, only: [:create]
   def create
+    @commentlike = current_user.commentlikes.new
     @bookcomment = current_user.bookcomments.build(bookcomment_params)
     true if @bookcomment.save
+
       # flash[:success] = 'コメントを投稿しました'
       # redirect_back(fallback_location: root_path)
   end
@@ -20,6 +22,7 @@ class BookcommentsController < ApplicationController
     current_user.delete_bookcomment(@target_comment)
     @bookpost = @target_comment.bookpost
     @bookcomments = @bookpost.bookcomments
+    @commentlike = current_user.commentlikes.new
     # flash[:primary] = 'コメントを削除しました'
     # redirect_back(fallback_location: root_path)
   end
