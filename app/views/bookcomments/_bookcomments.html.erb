@@ -22,7 +22,7 @@
       <% else %>
         <div class="row comment-footer">
           <div class="comment-footer-left col-6">
-            <span>♡<%= comment.commentlikes.count %></span>
+            <span class="dispaly-heart">♡</span><%= comment.commentlikes.count %>
           </div>
           <div class="comment-footer-right col-6">
             <%= link_to '', bookpost_bookcomment_path(@bookpost, comment), method: :delete, remote: true,  class: 'fas fa-trash-alt'%>
