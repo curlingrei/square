@@ -1,0 +1,13 @@
+<% if current_user.comment_like?(comment) %>
+  <%= form_with model: [@bookpost, comment, comment.commentlikes.find_by(bookcomment_id: comment.id)], method: :delete do |f| %>
+    <%= f.hidden_field :bookpost_id, :value => @bookpost.id %>
+    <%= f.hidden_field :bookcomment_id, :value => comment.id %>
+    <%= f.submit '❤️', class: 'submit-btn' %><%= comment.commentlikes.count %>
+  <% end %>
+<% else %>
+  <%= form_with model: [@bookpost, comment, @commentlike], method: :post do |f| %>
+    <%= f.hidden_field :bookpost_id, :value => @bookpost.id %>
+    <%= f.hidden_field :bookcomment_id, :value => comment.id %>
+    <%= f.submit '♡', class: 'submit-btn' %><%= comment.commentlikes.count %>
+  <% end %>
+<% end %>

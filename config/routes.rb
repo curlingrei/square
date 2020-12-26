@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'commentlikes/create'
+  get 'commentlikes/destroy'
   get 'bookcomments/create'
   get 'bookcomments/update'
   get 'bookcomments/destroy'
@@ -19,7 +21,9 @@ Rails.application.routes.draw do
   resources :users
   resources :bookposts do
     resources :booklikes, only: [:create, :destroy]
-    resources :bookcomments, only: [:create, :update, :destroy]
+    resources :bookcomments, only: [:create, :update, :destroy] do
+      resources :commentlikes, only: [:create, :destroy]
+    end
   end
   resources :booklikes, only: [:create, :destroy]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
