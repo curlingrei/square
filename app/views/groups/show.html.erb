@@ -1,0 +1,21 @@
+<div>
+    <%= @group.group_name %>
+    <%= @group.first_category %>
+    <% case @group.default_img_ptn 
+       when '0' %>
+        <img src="/assets/reading.jpg">
+      <% when 1 %>
+        <img src="/assets/studying.jpg">
+      <% when 2 %>
+        <img src="/assets/programing.jpg">
+      <% when 3 %>
+        <img src="/assets/plant.jpg">
+      <% when 4 %>
+        <img src="/assets/landscape.jpg">
+      <% when 5 %>
+        <img src="/assets/landscape.jpg">
+    <% end %>
+
+    <%= @group.default_img_ptn %>
+    <%= @group.group_description %>
+  </div>

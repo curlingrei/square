@@ -1,0 +1,22 @@
+<%= form_wifh model: @group, local: true do |f| %>
+  <div class="form-group">
+    <%= f.label :group_name, 'タイトル' %>
+    <%= f.text_field :group_name, class: 'form-control', placeholder: 'タイトルを入力してください' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :first_category, '大カテゴリ' %>
+    <%= f.select :first_category, ['読書', '勉強', 'プログラミング'], include_blank: '選択してください', class: 'form-control'%>
+  </div>
+  <div class="form-group">
+    <%= f.label :second_category, '中カテゴリ' %>
+    <%= f.select :second_category, ['ruby', 'python', 'PHP'], include_blank: '選択してください', class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :group_description, 'タイトル' %>
+    <%= f.text_area :group_description, class: 'form-control', placeholder: 'タイトルを入力してください' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :defalt_img_ptn, '画像パターン' %>
+    <%= f.select :default_img_ptn, [1, 2, 3, 4, 5], include_blank: '選択してください', class: 'form-control' %>
+  </div>
+<% end %>

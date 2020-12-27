@@ -11,6 +11,7 @@ class User < ApplicationRecord
   has_many :booklikes
   has_many :bookcomments
   has_many :commentlikes
+  has_many :groups
 
   def booklike(bookpost)
     booklikes.find_or_create_by(bookpost_id: bookpost.id) unless bookposts.include?(bookpost)

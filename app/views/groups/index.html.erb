@@ -1,0 +1,12 @@
+<% if @groups.any? %>
+  <% @groups.each do |group| %>
+  <div>
+    <%= group.group_name %>
+    <%= group.first_category %>
+    <%= group.defalut_img_ptn %>
+    <%= group.group_description %>
+  </div>
+  <% end %>
+<% else %>
+  <p>グループはありません</p>
+<% end %>
