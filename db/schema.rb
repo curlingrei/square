@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_26_093131) do
+ActiveRecord::Schema.define(version: 2020_12_27_040211) do
 
   create_table "bookcomments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "user_id", null: false
@@ -62,6 +62,7 @@ ActiveRecord::Schema.define(version: 2020_12_26_093131) do
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "image"
     t.index ["user_id"], name: "index_groups_on_user_id"
   end
 
