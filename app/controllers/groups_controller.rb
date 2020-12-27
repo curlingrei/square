@@ -35,7 +35,7 @@ class GroupsController < ApplicationController
   private
 
   def groups_params
-    params.require(:group).permit(:group_name, :first_category, :second_category, :group_description, :default_img_ptn, :user_id)
+    params.require(:group).permit(:group_name, :first_category, :second_category, :group_description, :default_img_ptn, :image, :remove_image, :user_id)
   end
 
   def set_group

@@ -1,1 +1,1 @@
-import "stylesheets/groups/new.scss";
+import "stylesheets/groups/index.scss";

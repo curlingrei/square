@@ -6,7 +6,7 @@
             <%= link_to '', bookpost %>
             <div class="contents">
               <div class="content-title">
-                <%= bookpost.title %>
+                <%= bookpost.title.truncate(20) %>
               </div>
               <p><span class="badge badge-secondary"><%= bookpost.category %></span></p>
               <% if bookpost.bookimage? %>
