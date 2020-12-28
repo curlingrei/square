@@ -45,11 +45,7 @@
   サンプル画像を使用する
 </div>
 
-<%= f.submit '確定', class: 'button' %>
-<% end %>
-
-<% if group.user == current_user %>
-  <%= link_to '',group, method: :delete, data:{confirm: '本当に削除してよろしいですか?'}, class: 'fas fa-trash-alt' %>
+<%= f.submit '確定', class: 'button form-control' %>
 <% end %>
 
 <%= javascript_pack_tag 'groups/new' %>
