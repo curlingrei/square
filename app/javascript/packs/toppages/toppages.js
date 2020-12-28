@@ -9,6 +9,7 @@ $(function(){
             var clickedIndex = $('.c-button').index($(this));
             $('.image').eq(clickedIndex).addClass('active');
             $(this).addClass('clicked-btn');
+            alert(clickedIndex);
         }
     );
 

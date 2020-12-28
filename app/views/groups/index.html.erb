@@ -1,0 +1,78 @@
+<div class=row>
+  <div class="col-sm-2 col-2">
+    <p>すべて</p>
+  </div>
+  <div class="col-sm-2 col-2">
+    <p>勉強</p>
+  </div>
+  <div class="col-sm-2 col-2">
+    <p>スキルアップ</p>
+  </div>
+  <div class="col-sm-2 col-2">
+    <p>プログラミング</p>
+  </div>
+  <div class="col-sm-2 col-2">
+    <p>そのた</p>
+  </div>
+</div>
+<% if @groups.any? %>
+<div class="row entire_wrapper">
+  <% @groups.each do |group| %>
+    <div class="row-external">
+      <div class="row row-internal">
+        <div class="col-lg-2 col-sm-3 col-4 pl-0 pr-0">
+          <div class="image_wrapper">
+            <% if group.image? %>
+              <%= image_tag group.image.url %>
+            <% else %>
+              <% case group.default_img_ptn 
+                when 0 %>
+                <img src="/assets/reading.jpg">
+              <% when 1 %>
+                <img src="/assets/studying.jpg">
+              <% when 2 %>
+                <img src="/assets/programing.jpg">
+              <% when 3 %>
+                <img src="/assets/plant.jpg">
+              <% when 4 %>
+                <img src="/assets/landscape.jpg">
+              <% when 5 %>
+                <img src="/assets/landscape.jpg">
+              <% end %>
+            <% end %>
+            <p class="badge badge-secondary w-100"><%= group.first_category %></p>
+            <%= link_to '', group %>
+          </div>
+        </div>
+        <div class="col-lg-10 col-sm-9 col-8 contents">
+          <h4><%= group.group_name %></h4>
+          <p><%= group.group_description.truncate(50) %></p>
+        </div>
+          <div class="offset-lg-2 offset-sm-3 col-sm-4 col-6 footer-left pl-0 pr-0">
+            <% if group.user.avatar? %>
+              <%= image_tag group.user.avatar.url(:icon) %>
+            <% else %>
+              <img src="/assets/defalut_avatar.png">
+            <% end %>
+            <span><%= group.user.username %></span>
+          </div>
+          <div class="col-lg-6 col-sm-5 col-6 text-right pl-0 pr-0">
+            <span><%= group.updated_at.strftime("%Y-%-m-%-d %-H:%-M") %></span>
+          </div>
+      </div>
+    </div>
+  <% end %>
+  <%= paginate @groups %>
+</div>
+<% else %>
+  <p>グループはありません</p>
+<% end %>
+
+<%= javascript_pack_tag 'groups/index' %>
+<%= stylesheet_pack_tag 'groups/index' %>
+
+
+
+
+
+
