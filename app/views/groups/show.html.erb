@@ -1,26 +1,76 @@
-<div>
-    <%= @group.group_name %>
-    <%= @group.first_category %>
-    <% if @group.image? %>
-      <%= image_tag @group.image.url %>
-    <% else %>
-    <% case @group.default_img_ptn 
-         when 0 %>
-        <img src="/assets/reading.jpg">
-      <% when 1 %>
-        <img src="/assets/studying.jpg">
-      <% when 2 %>
-        <img src="/assets/programing.jpg">
-      <% when 3 %>
-        <img src="/assets/plant.jpg">
-      <% when 4 %>
-        <img src="/assets/landscape.jpg">
-      <% when 5 %>
-        <img src="/assets/landscape.jpg">
-    <% end %>
-    <% end %>
-    
-
-    <%= @group.default_img_ptn %>
-    <%= @group.group_description %>
+<div class="row entire_wrapper">
+  <div class="col-sm-12">
+    <div class="title_wrapper">
+      <div class="title">
+        <h3><%= @group.group_name %></h3>
+        <span class="badge badge-secondary"><%= @group.first_category %></span>
+      </div>
+    </div>
   </div>
+  <div class="col-sm-12">
+    <div class="image_wrapper">
+      <% if @group.image? %>
+        <%= image_tag @group.image.url %>
+      <% else %>
+        <% case @group.default_img_ptn 
+          when 0 %>
+            <img src="/assets/reading.jpg">
+          <% when 1 %>
+            <img src="/assets/studying.jpg">
+          <% when 2 %>
+            <img src="/assets/programing.jpg">
+          <% when 3 %>
+            <img src="/assets/plant.jpg">
+          <% when 4 %>
+            <img src="/assets/landscape.jpg">
+          <% when 5 %>
+            <img src="/assets/landscape.jpg">
+          <% end %>
+      <% end %>
+    </div>
+  </div>
+<% if false %>
+  <div class="col-lg-4 col-md-6 col-sm-4 col-2">
+    <div class="row icons">
+      <div class="col-sm-8 col-12">
+        <span class="badge badge-secondary"><%= @group.first_category %></span>
+      </div>
+      <div class="col-sm-4 col-12 icon">
+        <% if @group.user == current_user %>
+          <%= link_to '', edit_bookpost_path, class: 'fas fa-edit' %>
+          <%= link_to '',@group, method: :delete, data:{confirm: '本当に削除してよろしいですか?'}, class: 'fas fa-trash-alt' %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+  <div class="col-lg-9 col-md-8 col-sm-12 col-12">
+    <div class="wrapper">
+      <div class="description">
+        <h1><%= @group.group_description %></h1>
+      </div>
+    </div>
+      <div class="other-info">
+          <% if @group.user.avatar? %>
+            <%= image_tag @group.user.avatar.url(:icon) %>
+          <% else %>
+            <img src="/assets/defalut_avatar.png">
+          <% end %>
+          <%= @group.user.username %>
+          <%= @group.updated_at.strftime("%Y-%-m-%-d %-H:%-M") %>
+      </div>
+  </div>
+  <div class="col-lg-3 col-md-4 col-sm-12 col-12">
+    <p>参加メンバー</p>
+    <p>管理者メニュー</p>
+  </div>
+  <div class="col-12">
+    <p>コメント</p>
+  </div>
+  <div class='col-sm-12 footer'>
+    <div class="fixed-bottom bg-primary">Fixed bottom</div>
+  </div>
+</div>
+<%= javascript_pack_tag 'groups/show' %>
+<%= stylesheet_pack_tag 'groups/show' %>
