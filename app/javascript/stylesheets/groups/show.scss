@@ -50,6 +50,16 @@ body {
   }
 }
 
+.joining-users {
+  display: inline-block;
+  img {
+    width: 30px;
+    height: 30px;
+    border: solid 1px white;
+    border-radius: 20px;
+  }
+}
+
 .fas {
   text-decoration: none;
   color: black;
@@ -127,6 +137,30 @@ h4 {
   margin-bottom: auto;
 }
 
+//コメントの削除ボタン
+.delete-btn {
+  width: 100%;
+  text-align: right;
+}
+
+.comment-footer-left {
+  width: 100%;
+  span {
+      padding-left: 6.5px;
+      padding-right: 6px;
+  }
+}
+
+.comment-footer-right {
+  width: 100%;
+  text-align: right;
+}
+
+.fixed-bottom {
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+}
 @media(max-width: 420px){
   .comment-header-left {
       font-size: 8px;
@@ -163,29 +197,21 @@ h4 {
   }
 }
 
-//コメントの削除ボタン
-.delete-btn {
-  width: 100%;
-  text-align: right;
-}
-
-.comment-footer-left {
-  width: 100%;
+.joining-users {
   span {
-      padding-left: 6.5px;
-      padding-right: 6px;
+    display: none;
+  }
+  img:hover {
+    span {
+      display: block;
+    }
   }
 }
 
-.comment-footer-right {
-  width: 100%;
-  text-align: right;
-}
 
-.fixed-bottom {
-  width: 75%;
-  margin-left: auto;
-  margin-right: auto;
-}
+
+
+
+
 
 

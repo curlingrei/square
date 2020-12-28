@@ -1,5 +1,6 @@
 class BooklikesController < ApplicationController
   before_action :set_bookpost
+  before_action :require_user_logged_in
 
   def create
     current_user.booklike(@bookpost)

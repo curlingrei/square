@@ -1,5 +1,6 @@
 class CommentlikesController < ApplicationController
   before_action :set_target_comment, only: [:create, :destroy]
+  before_action :require_user_logged_in
   def create
     current_user.comment_like(@target_comment)
   end

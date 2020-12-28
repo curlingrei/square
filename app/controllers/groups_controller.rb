@@ -6,6 +6,10 @@ class GroupsController < ApplicationController
   end
 
   def show
+    @participate = current_user.participates.build
+    @participated = Participate.find_by(group_id: @group.id)
+    # @participated = Participate.find_by(group_id: @group.id)
+    @participates = @group.participates
   end
 
   def new

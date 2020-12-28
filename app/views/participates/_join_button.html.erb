@@ -1,0 +1,12 @@
+<% if current_user.join_group?(group) %>
+  <%= form_with model: [group, @participated], method: :delete do |f| %>
+    <%= f.hidden_field :group_id, :value => group.id %>
+    <%= f.submit 'グループから抜ける' %>
+  <% end %>
+<% else %>
+  <%= form_with model: [group, @participate], method: :post do |f| %>
+    <%= f.hidden_field :group_id, :value => group.id %>
+    <%= group.id %>
+    <%= f.submit '参加する' %>
+  <% end %>
+<% end %>

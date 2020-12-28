@@ -1,5 +1,6 @@
 class BookcommentsController < ApplicationController
   before_action :set_bookcomments, only: [:create]
+  before_action :require_user_logged_in
   def create
     @commentlike = current_user.commentlikes.new
     @bookcomment = current_user.bookcomments.build(bookcomment_params)

@@ -47,8 +47,17 @@
     </div>
   </div>
   <div class="col-lg-3 col-md-4 col-sm-12 col-12">
-    <p>参加メンバー</p>
-    <%= link_to '管理者メニューへ', edit_group_path %>
+    <p>募集条件</p>
+    <p>年齢</p>
+    <p>性別</p>
+    <p>希望時間帯</p>
+    <p>投稿日</p>
+    <p>最終更新日</p>
+
+    <div><%= link_to '管理者メニューへ', edit_group_path %></div>
+    <div class="join-btn">
+      <%= render 'participates/join_button', group: @group %>
+    </div>
   </div>
   <div class="col-12">
     <p>コメント</p>
