@@ -1,12 +1,16 @@
 <% if current_user.join_group?(group) %>
   <%= form_with model: [group, @participated], method: :delete do |f| %>
     <%= f.hidden_field :group_id, :value => group.id %>
-    <%= f.submit 'グループから抜ける' %>
+    <%= f.submit '参加中', class: 'btn-outline-danger form-control' %>
   <% end %>
 <% else %>
-  <%= form_with model: [group, @participate], method: :post do |f| %>
-    <%= f.hidden_field :group_id, :value => group.id %>
-    <%= group.id %>
-    <%= f.submit '参加する' %>
+  <% if group.participates.size >= group.target_number %>
+    <p class="text-danger font-weight-bold">⚠️定員超えのため参加できません</p>
+  <% else %>
+    <%= form_with model: [group, @participate], method: :post do |f| %>
+      <%= f.hidden_field :group_id, :value => group.id %>
+      <%= f.submit '参加する', class: 'btn-outline-primary form-control' %>
+    <% end %>
   <% end %>
 <% end %>
+

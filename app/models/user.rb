@@ -12,7 +12,7 @@ class User < ApplicationRecord
   has_many :bookcomments
   has_many :commentlikes
   has_many :groups
-  has_many :participates
+  has_many :participates, dependent: :destroy
 
   def booklike(bookpost)
     booklikes.find_or_create_by(bookpost_id: bookpost.id) unless bookposts.include?(bookpost)

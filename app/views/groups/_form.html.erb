@@ -1,16 +1,38 @@
 <%= form_with model: group, local: true do |f| %>
   <%= render 'layouts/error_messages', model: f.object %>
   <div class="form-group title">
-    <%= f.label :group_name, 'タイトル' %>
+    <%= f.label :group_name, '■タイトル' %>
     <%= f.text_field :group_name, class: 'form-control', placeholder: 'タイトルを入力してください' %>
   </div>
   <div class="form-group">
-    <%= f.label :first_category, 'カテゴリ' %>
+    <%= f.label :first_category, '■カテゴリ' %>
     <%= f.select :first_category, ['読書', '勉強(高校)', '勉強(大学・一般)', '勉強(語学)', '勉強(資格)', 'プログラミング'], include_blank: '選択してください', class: 'form-control'%>
   </div>
 
+  <p>募集条件</p>
+
   <div class="form-group">
-    <%= f.label :group_description, '説明' %>
+    <%= f.label :target_number, '■募集人数' %>
+    <%= f.select :target_number, [1, 2, 3, 4, 5], include_blank: '選択してください', class: 'form-control'%>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :target_age, '■年齢' %>
+    <%= f.text_field :target_age, placeholder: '(例) 高校生, 20代, 10代~30代', class: 'form-control'%>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :target_sex, '■性別' %>
+    <%= f.select :target_sex, ['男性のみ', '女性のみ', '男女不問'], include_blank: '選択してください', class: 'form-control'%>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :hope_time, '■希望時間帯' %>
+    <%= f.text_field :hope_time, placeholder: '(例) 土曜日の17時以降', class: 'form-control'%>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :group_description, '■紹介文' %>
     <%= f.text_area :group_description, class: 'form-control', placeholder: 'タイトルを入力してください' %>
   </div>
     <%= f.hidden_field :default_img_ptn %>

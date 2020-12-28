@@ -185,6 +185,12 @@ h4 {
       }
     }
   }
+  
+.manage-menu {
+  a {
+    width: 100%;
+  }
+}
 @media(max-width: 576px){
   .wrapper {
     border-right: none;
@@ -197,16 +203,12 @@ h4 {
   }
 }
 
-.joining-users {
-  span {
-    display: none;
-  }
-  img:hover {
-    span {
-      display: block;
-    }
+@media(max-width: 991px){
+  .entire_wrapper {
+    width: 100%;
   }
 }
+
 
 
 
