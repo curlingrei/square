@@ -12,6 +12,7 @@ class User < ApplicationRecord
   has_many :bookcomments
   has_many :commentlikes
   has_many :groups
+  has_many :participates
 
   def booklike(bookpost)
     booklikes.find_or_create_by(bookpost_id: bookpost.id) unless bookposts.include?(bookpost)
@@ -42,5 +43,18 @@ class User < ApplicationRecord
 
   def comment_like?(comment)
     commentlikes.exists?(bookcomment_id: comment.id)
+  end
+
+  def join_group(group)
+    participates.find_or_create_by(group_id: group.id) unless participates.include?(group)
+  end
+
+  def exit_group(group)
+    target_group = participates.find_by(group_id: group.id)
+    target_group.destroy if target_group
+  end
+
+  def join_group?(group)
+    participates.exists?(group_id: group.id)
   end
 end
