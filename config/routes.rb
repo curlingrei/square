@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'participates/create'
+  get 'participates/destroy'
   # get 'commentlikes/create'
   # get 'commentlikes/destroy'
   # get 'bookcomments/create'
@@ -26,6 +28,8 @@ Rails.application.routes.draw do
     end
   end
   resources :booklikes, only: [:create, :destroy]
-  resources :groups
+  resources :groups do
+    resources :participates, only: [:create, :destroy]
+  end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

@@ -1,0 +1,16 @@
+<% participates.each do |participate| %>
+  <div class="joining-users">
+    <% if participate.user.avatar? %>
+      <div class="click">
+      <%= image_tag participate.user.avatar.url(:icon) %> 
+      </div>
+      <span><%= participate.user.username %></span>
+    <% else %>
+      <div class="click">
+      <img src="/assets/defalut_avatar.png">
+      </div>
+      <span><%= participate.user.username %></span>
+    <% end %>
+  </div>
+<% end %>
+

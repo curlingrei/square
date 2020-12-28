@@ -6,6 +6,10 @@ class GroupsController < ApplicationController
   end
 
   def show
+    @participate = current_user.participates.build
+    @participated = Participate.find_by(group_id: @group.id)
+    # @participated = Participate.find_by(group_id: @group.id)
+    @participates = @group.participates
   end
 
   def new
@@ -45,7 +49,7 @@ class GroupsController < ApplicationController
   private
 
   def groups_params
-    params.require(:group).permit(:group_name, :first_category, :group_description, :default_img_ptn, :image, :remove_image, :user_id)
+    params.require(:group).permit(:group_name, :first_category, :group_description, :default_img_ptn, :image, :remove_image, :user_id, :target_age, :target_sex, :target_number, :hope_time)
   end
 
   def set_group
