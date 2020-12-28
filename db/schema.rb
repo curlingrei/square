@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_27_040211) do
+ActiveRecord::Schema.define(version: 2020_12_28_024024) do
 
   create_table "bookcomments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "user_id", null: false
@@ -56,7 +56,6 @@ ActiveRecord::Schema.define(version: 2020_12_27_040211) do
   create_table "groups", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "group_name"
     t.string "first_category"
-    t.string "second_category"
     t.text "group_description"
     t.integer "default_img_ptn"
     t.bigint "user_id", null: false
