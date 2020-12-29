@@ -4,7 +4,7 @@
     <%= f.submit '参加中', class: 'btn-outline-danger form-control' %>
   <% end %>
 <% else %>
-  <% if group.participates.size >= group.target_number %>
+  <% if num_over?(group) %>
     <p class="text-danger font-weight-bold">⚠️定員超えのため参加できません</p>
   <% else %>
     <%= form_with model: [group, @participate], method: :post do |f| %>

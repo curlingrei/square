@@ -7,6 +7,7 @@ class Group < ApplicationRecord
   validates :group_description, presence: true
   validates :first_category, presence: true
   validates :sample_or_upload, presence: true
+  validates :target_number, presence: true
   has_many :participates, dependent: :destroy
 
   private

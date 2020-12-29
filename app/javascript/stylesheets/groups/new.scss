@@ -1,3 +1,13 @@
+h2 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-bottom: solid #330000 3px;
+}
+.form-wrapper {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
 .second-category {
     display: none;
 }
@@ -6,13 +16,6 @@
     display: block;
 }
 
-// .images {
-//     img {
-//         width: 20%;
-//         height: 200px;
-//     }
-// }
-
 .c-button {
     background-color: gray;
     opacity: 0.5;
@@ -20,15 +23,14 @@
     height: 10px;
     border-radius: 10px;
     display: inline-block;
-    // padding-right: 10px;
-    // margin-right: auto;
-    // margin-left: auto;
     text-align: center;
 }
 
 
 .images {
-    width: 100%;
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
 }
 .hide {
     display: none;
@@ -43,6 +45,19 @@
 }
 
 .selected {
-    border: solid 5px grey;
+    border: solid 5px #330000;
     opacity: 0.6;
+}
+
+.file_field {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+
+@media(max-width: 576px){
+  .form-wrapper {
+    width: 100%;
+  }
+
 }

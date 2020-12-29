@@ -31,16 +31,19 @@
               <% when 1 %>
                 <img src="/assets/studying.jpg">
               <% when 2 %>
-                <img src="/assets/programing.jpg">
+                <img src="/assets/language.jpeg">
               <% when 3 %>
-                <img src="/assets/plant.jpg">
+                <img src="/assets/programing.jpg">
               <% when 4 %>
-                <img src="/assets/landscape.jpg">
+                <img src="/assets/plant.jpg">
               <% when 5 %>
                 <img src="/assets/landscape.jpg">
               <% end %>
             <% end %>
-            <p class="badge badge-secondary w-100"><%= group.first_category %></p>
+            <p class="badge badge-secondary w-100 mb-0"><%= group.first_category %></p>
+            <% if num_over?(group) %>
+              <p class="badge badge-danger w-100 mb-0">募集終了</p>
+            <% end %>
             <%= link_to '', group %>
           </div>
         </div>
