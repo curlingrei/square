@@ -37,6 +37,10 @@
     border-radius: 20px;
   }
 }
+
+.for-smartphone {
+  display: none;
+}
 @media(max-width: 576px){
   .row-external {
     width: 100%;
@@ -53,9 +57,7 @@
   .badge {
     font-size: 3px;
   }
-  span {
-    font-size: 8px;
-  }
+  
   .contents {
     h4 {
       font-size: 15px;
@@ -68,8 +70,34 @@
       border: solid 1px white;
       border-radius: 5px;
     }
+    span {
+      font-size: 8px;
+    }
   }
+  .footer-right {
+    font-size: 8px;
+  }
+
+  .for-smartphone {
+    display: block;
+  }
+  .tabs {
+    display: none;
+  }
+ 
 }
+
+.nav-link {
+  color: black;
+}
+@media(min-width: 577px) and (max-width: 768px){
+  .tabs {
+    font-size: 10px;
+  }
+
+}
+
+
 @media(min-width: 577px) and (max-width: 960px){
   .row-external {
     width: 100%;
