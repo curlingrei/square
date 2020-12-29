@@ -1,0 +1,85 @@
+<div class="tabs">
+  <ul class="nav nav-tabs">
+    <li class="nav-item">
+      <% if current_page?(groups_path) %>
+        <%= link_to 'すべて', groups_path, class: 'nav-link active' %>
+      <% else %>
+        <%= link_to 'すべて', groups_path, class: 'nav-link' %>
+      <% end %>
+    </li>
+    <li class="nav-item">
+      <% if current_page?(readings_path) %>
+        <%= link_to '読書', readings_path, class: 'nav-link active' %>
+      <% else %>
+        <%= link_to '読書', readings_path, class: 'nav-link' %>
+      <% end %>
+        
+    </li>
+    <li class="nav-item">
+      <% if current_page?(studying_high_path) %>
+        <%= link_to '勉強(高校)', studying_high_path, class: 'nav-link active' %>
+      <% else %>
+        <%= link_to '勉強(高校)', studying_high_path, class: 'nav-link' %>
+      <% end %>
+    </li>
+    <li class="nav-item">
+      <% if current_page?(studying_univ_path) %>
+        <%= link_to '勉強(大学・一般)', studying_univ_path, class: 'nav-link active' %>
+      <% else %>
+        <%= link_to '勉強(大学・一般)', studying_univ_path, class: 'nav-link' %>
+      <% end %>
+    </li>
+    <li class="nav-item">
+      <% if current_page?(studying_language_path) %>
+        <%= link_to '勉強(言語)', studying_language_path, class: 'nav-link active' %>
+      <% else %>
+        <%= link_to '勉強(言語)', studying_language_path, class: 'nav-link' %>
+      <% end %>
+    </li>
+    <li class="nav-item">
+      <% if current_page?(studying_exam_path) %>
+        <%= link_to '勉強(資格)', studying_exam_path, class: 'nav-link active' %>
+      <% else %>
+        <%= link_to '勉強(資格)', studying_exam_path, class: 'nav-link' %>
+      <% end %>
+    </li>
+    <li class="nav-item">
+      <% if current_page?(programing_path) %>
+        <%= link_to 'プログラミング', programing_path, class: 'nav-link active' %>
+      <% else %>
+        <%= link_to 'プログラミング', programing_path, class: 'nav-link' %>
+      <% end %>
+    </li>
+  </ul>
+</div>
+
+<ul class="nav nav-tabs for-smartphone">
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" data-toggle="dropdown"
+       href="#" role="button" aria-haspopup="true" aria-expanded="false">カテゴリ絞り込み:
+       <% if current_page?(groups_path) %>
+       すべて
+       <% elsif current_page?(readings_path) %>
+       読書
+       <% elsif current_page?(studying_high_path) %>
+       勉強(高校)
+       <% elsif current_page?(studying_univ_path) %>
+       勉強(大学・一般)
+       <% elsif current_page?(studying_language_path) %>
+       勉強(言語)
+       <% elsif current_page?(studying_exam_path) %>
+       勉強(資格)
+       <% elsif current_page?(programing_path) %>
+       プログラミング
+       <% end %></a>
+    <div class="dropdown-menu">
+      <%= link_to 'すべて', groups_path, class: 'dropdown-item' %>
+      <%= link_to '読書', readings_path, class: 'dropdown-item' %>
+      <%= link_to '勉強(高校)', studying_high_path, class: 'dropdown-item' %>
+      <%= link_to '勉強(大学・一般)', studying_univ_path, class: 'dropdown-item' %>
+      <%= link_to '勉強(言語)', studying_language_path, class: 'dropdown-item' %>
+      <%= link_to '勉強(資格)', studying_exam_path, class: 'dropdown-item' %>
+      <%= link_to 'プログラミング', programing_path, class: 'dropdown-item' %>
+    </div>
+  </li>
+</ul>

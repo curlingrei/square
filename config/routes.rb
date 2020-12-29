@@ -31,5 +31,11 @@ Rails.application.routes.draw do
   resources :groups do
     resources :participates, only: [:create, :destroy]
   end
+  get 'readings', to: 'groups#readings'
+  get 'studying_high', to: 'groups#studying_high'
+  get 'studying_univ', to: 'groups#studying_univ'
+  get 'studying_language', to: 'groups#studying_language'
+  get 'studying_exam', to: 'groups#studying_exam'
+  get 'programing', to: 'groups#programing'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

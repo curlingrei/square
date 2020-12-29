@@ -46,6 +46,30 @@ class GroupsController < ApplicationController
     redirect_to groups_url
   end
 
+  def readings
+    @reading_groups = Group.where(first_category: '読書').page(params[:page]).per(6)
+  end
+
+  def studying_high
+    @studying_high_groups = Group.where(first_category: '勉強(高校)').page(params[:page]).per(6)
+  end
+
+  def studying_univ
+    @studying_univ_groups = Group.where(first_category: '勉強(大学・一般)').page(params[:page]).per(6)
+  end
+
+  def studying_language
+    @studying_language_groups = Group.where(first_category: '勉強(語学)').page(params[:page]).per(6)
+  end
+
+  def studying_exam
+    @studying_exam_groups = Group.where(first_category: '勉強(資格)').page(params[:page]).per(6)
+  end
+
+  def programing
+    @programing_groups = Group.where(first_category: 'プログラミング').page(params[:page]).per(6)
+  end
+
   private
 
   def groups_params
