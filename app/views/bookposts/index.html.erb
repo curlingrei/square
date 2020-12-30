@@ -1,4 +1,9 @@
 <h2 class="text-center">本紹介一覧</h2>
+<div class="new-bookpost">
+  <%= link_to new_bookpost_path, class: 'btn btn-outline-secondary' do %>
+    <i class="fas fa-plus"></i> 新規投稿する
+  <% end %>
+</div>
 <% if @bookposts.any? %>
     <div class="row">
       <% @bookposts.each do |bookpost| %>

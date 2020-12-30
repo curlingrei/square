@@ -9,10 +9,12 @@ class User < ApplicationRecord
   has_many :bookposts
   mount_uploader :avatar, AvatarUploader
   has_many :booklikes
+  has_many :liked_bookposts, through: :booklikes, source: :bookpost
   has_many :bookcomments
   has_many :commentlikes
   has_many :groups
   has_many :participates, dependent: :destroy
+  has_many :joining_groups, through: :participates, source: :group
 
   def booklike(bookpost)
     booklikes.find_or_create_by(bookpost_id: bookpost.id) unless bookposts.include?(bookpost)

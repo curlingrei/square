@@ -3,6 +3,19 @@ h2 {
   margin-bottom: 20px;
   border-bottom: solid #330000 3px;
 }
+//新規投稿リンク
+.new-bookpost {
+  a {
+    color: black;
+    border: solid #550000 3px;
+    font-weight: bold;
+  }
+  a:hover {
+    color: white;
+    background-color: #550000;
+    border: solid #550000 3px;
+  }
+}
 //1行単位(外)
 .row-external {
   width: 80%;
@@ -87,7 +100,7 @@ h2 {
     font-size: 8px;
   }
 
-  .for-smartphone {
+  .for-smartphone-dropdown {
     display: block;
   }
   .tabs {

@@ -1,4 +1,17 @@
 ja:
+  errors:
+    messages:
+      carrierwave_processing_error: を処理できませんでした
+      carrierwave_integrity_error: は許可されていないファイル種類です
+      carrierwave_download_error: はダウンロードできません
+      extension_whitelist_error: のアップロードは許可されていません
+      extension_blacklist_error: のアップロードは許可されていません
+      content_type_whitelist_error: のアップロードは許可されていません
+      content_type_blacklist_error: のアップロードは許可されていません
+      rmagick_processing_error: を処理できませんでした。画像ファイルかどうか確認してください
+      mini_magick_processing_error: を処理できませんでした。画像ファイルかどうか確認してください
+      min_size_error: "を %{min_size}以上のサイズにしてください"
+      max_size_error: "%{max_size}以下のサイズにしてください"
   views:
     pagination:
       first: <i class="fas fa-angle-double-left"></i>

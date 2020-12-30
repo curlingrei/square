@@ -2,7 +2,7 @@ class GroupsController < ApplicationController
   before_action :require_user_logged_in
   before_action :set_group, only: [:show, :edit, :update, :destroy]
   def index
-    @groups = Group.all.page(params[:page]).per(2)
+    @groups = Group.all.page(params[:page]).per(10)
   end
 
   def show
@@ -22,7 +22,6 @@ class GroupsController < ApplicationController
       flash[:success] = 'グループを作成しました'
       redirect_to @group
     else
-       flash[:danger] = 'グループの作成に失敗しました'
        render :new
     end
   end

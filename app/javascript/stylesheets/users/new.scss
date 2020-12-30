@@ -13,6 +13,17 @@
     border-radius: 8px;
 }
 
+.guest-login-btn {
+  background-color: #A0522D;
+  color: white;
+  box-shadow: 0 6px #550000;
+  opacity: 1;
+  width: 100%;
+  outline: none;
+  border-radius: 8px;
+  width: 100%;
+
+}
 .button:active{
     box-shadow: none;
     position:relative;
@@ -21,6 +32,7 @@
 
 .button:hover{
     opacity: 0.8;
+    outline: none !important;
 }
 
 h2 {

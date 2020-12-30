@@ -1,7 +1,8 @@
 <h2 class="text-center">新規グループ作成</h2>
+
 <%= form_with model: group, local: true do |f| %>
-  <%= render 'layouts/error_messages', model: f.object %>
   <div class="form-wrapper">
+    <%= render 'layouts/error_messages', model: f.object %>
     <div class="row">
       <div class="col-sm-4 col-12">
         <p><%= f.label :group_name, '■タイトル(50文字以内)' %> <span class="text-danger">*</span></p>

@@ -2,7 +2,7 @@ class BookpostsController < ApplicationController
   before_action :set_bookpost, only: [:show, :edit, :update, :destroy]
   before_action :require_user_logged_in
   def index
-    @bookposts = Bookpost.all.page(params[:page]).per(2)
+    @bookposts = Bookpost.all.page(params[:page]).per(16)
   end
 
   def show
@@ -23,7 +23,6 @@ class BookpostsController < ApplicationController
       flash[:success] = '投稿しました'
       redirect_to @bookpost
     else
-      flash[:danger] = '投稿に失敗しました'
       render :new
     end
   end
@@ -35,7 +34,6 @@ class BookpostsController < ApplicationController
       flash[:success] = '投稿内容を更新しました'
       redirect_to @bookpost
     else
-      flash[:danger] = '更新に失敗しました'
       render :edit
     end
   end

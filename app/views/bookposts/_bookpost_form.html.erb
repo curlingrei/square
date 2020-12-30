@@ -1,7 +1,7 @@
 <h2 class="text-center">本紹介の新規投稿</h2>
   <%= form_with(model: bookpost, local: true) do |f| %>
-    <%= render 'layouts/error_messages', model: f.object %>
     <div class="form-wrap">
+      <%= render 'layouts/error_messages', model: f.object %>
       <div class="row">
         <div class="col-sm-4 col-12">
           <p><%= f.label :title, '■タイトル(30文字以内)' %> <span class="text-danger">*</span></p>
@@ -30,7 +30,7 @@
         </div>
       </div>
 
-      <p class="mb-0"><%= f.label :bookimage, '■画像' %></p>
+      <p class="mb-0"><%= f.label :bookimage, '■本の画像' %></p>
         <p><%= f.file_field :bookimage %></p>
       <p><%= f.check_box :remove_bookimage %> デフォルトの画像を使用する</p>
 

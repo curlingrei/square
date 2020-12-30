@@ -1,7 +1,7 @@
 
 <%= form_with(model: user, local: true) do |f| %>
-  <%= render 'layouts/error_messages', model: f.object %>
   <div class="form-wrapper">
+    <%= render 'layouts/error_messages', model: f.object %>
     <div class="row">
       <div class="col-sm-4 col-12">
         <p><%= f.label :username, '■ユーザーネーム' %> <span class="text-danger">*</span></p>
@@ -39,11 +39,11 @@
     </div>
 
     <% if logged_in? %>
-        <%= f.label :avatar, '■プロフィールアイコン' %>
-        <p><%= f.file_field :avatar %></p>
-        <%= f.check_box :remove_avatar %> デフォルトのアイコンに戻す
-      
+      <%= f.label :avatar, '■プロフィールアイコン' %>
+      <p><%= f.file_field :avatar %></p>
+      <%= f.check_box :remove_avatar %> デフォルトのアイコンに戻す
       <%= f.submit '更新', class: 'button' %>
+      <%= link_to '退会する', @user, method: :delete, data:{confirm: '本当に削除してよろしいですか?'}, class: 'btn btn-outline-danger w-100 mt-3' %>
     <% else %>
       <%= f.submit '登録', class: 'button' %>
     <% end %>

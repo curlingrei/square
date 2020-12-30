@@ -1,13 +1,4 @@
 Rails.application.routes.draw do
-  get 'participates/create'
-  get 'participates/destroy'
-  # get 'commentlikes/create'
-  # get 'commentlikes/destroy'
-  # get 'bookcomments/create'
-  # get 'bookcomments/update'
-  # get 'bookcomments/destroy'
-  # get 'booklikes/create'
-  # get 'booklikes/destroy'
   get 'sessions/new'
   get 'sessions/create'
   get 'sessions/destroy'
@@ -20,7 +11,7 @@ Rails.application.routes.draw do
   delete 'logout', to: 'sessions#destroy'
   # for guest_user
   post 'guest_login', to: 'guest_login#create'
-  resources :users
+  resources :users, only: [:show, :new, :create, :edit, :update, :destroy]
   resources :bookposts do
     resources :booklikes, only: [:create, :destroy]
     resources :bookcomments, only: [:create, :update, :destroy] do

@@ -1,5 +1,5 @@
-<nav class="common-nav navbar navbar-expand-sm navbar-dark fixed-top">
-  <a class="navbar-brand mr-auto" href="#"><i class="fas fa-book"></i>SQUARE</a>
+<nav class="common-nav navbar navbar-expand-lg navbar-dark fixed-top">
+  <%= link_to 'SQUARE' , root_path, class: 'navbar-brand mr-auto' %>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu" aria-controls="#menu" aria-expanded="true" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -7,12 +7,29 @@
     <div class="navbar-nav">
         <% if logged_in? %>
           <p class="text-light nav-item"><%= current_user.username %></p>
-          <%= link_to 'ログアウト', logout_path, method: :delete, class: 'nav-link nav-item' %>
-          <%= link_to 'bookpost一覧', bookposts_path, class: 'nav-link nav-item' %>
+          <%= link_to current_user, class: 'nav-item nav-link' do %>
+            <i class="far fa-user-circle"></i> マイページ
+          <% end %>
+          <%= link_to bookposts_path, class: 'nav-item nav-link' do %>
+            <i class="fas fa-book"></i> 本紹介一覧
+          <% end %>
+          <%= link_to groups_path, class: 'nav-item nav-link' do %>
+            <i class="fas fa-users"></i> グループ一覧
+          <% end %>
+          <%= link_to logout_path, method: :delete, class: 'nav-link nav-item' do %>
+            <i class="fas fa-sign-out-alt"></i> ログアウト
+          <% end %>
         <% else %>
-          <%= link_to '新規登録', signup_path, class: 'nav-link nav-item' %>
-          <%= link_to 'ログイン', login_path, class: 'nav-link nav-item' %>
-          <%= link_to 'ゲストログイン', guest_login_path, method: :post,  class: 'nav-link nav-item' %>
+          <%= link_to signup_path, class: 'nav-link nav-item' do %>
+            <i class="fas fa-user-plus"></i> 新規登録
+          <% end %>
+          <%= link_to login_path, class: 'nav-link nav-item' do %>
+            <i class="fas fa-sign-in-alt"></i> ログイン
+          <% end %>
+          <%= link_to guest_login_path, method: :post,  class: 'nav-link nav-item' do %>
+            <i class="fas fa-sign-in-alt"></i> ゲストログイン
+          <% end %>
+
         <% end %>
     </div>
   </div>

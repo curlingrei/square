@@ -19,7 +19,6 @@ class UsersController < ApplicationController
       flash[:success] = 'ユーザ登録が完了しました'
       redirect_to @user
     else
-      flash[:danger] = 'ユーザの登録に失敗しました'
       render :new
     end
   end
@@ -32,7 +31,6 @@ class UsersController < ApplicationController
       flash[:success] = 'ユーザ情報を更新しました'
       redirect_to @user
     else
-      flash[:danger] = 'ユーザ情報の更新に失敗しました'
       render :edit
     end
   end
@@ -60,4 +58,5 @@ class UsersController < ApplicationController
       redirect_back(fallback_location: root_path)
     end
   end
+
 end
