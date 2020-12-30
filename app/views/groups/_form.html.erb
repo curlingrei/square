@@ -4,7 +4,7 @@
   <div class="form-wrapper">
     <div class="row">
       <div class="col-sm-4 col-12">
-        <p><%= f.label :group_name, '■タイトル' %> <span class="text-danger">*</span></p>
+        <p><%= f.label :group_name, '■タイトル(50文字以内)' %> <span class="text-danger">*</span></p>
       </div>
       <div class="col-sm-8 col-12">
         <p><%= f.text_field :group_name, class: 'form-control', placeholder: 'タイトルを入力してください' %></p>
@@ -61,7 +61,7 @@
         <p><%= f.label :group_description, '■紹介文' %> <span class="text-danger">*</span></p>
       </div>
       <div class="col-sm-8 col-12">
-        <p><%= f.text_area :group_description, class: 'form-control', placeholder: 'グループを紹介する文章を入力してください' %></p>
+        <p><%= f.text_area :group_description, class: 'form-control', placeholder: 'グループを紹介する文章を入力してください', rows: 5 %></p>
       </div>
     </div>
     <%= f.hidden_field :default_img_ptn %>

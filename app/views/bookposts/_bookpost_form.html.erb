@@ -1,10 +1,10 @@
-<h2 class="text-center">新規投稿</h2>
+<h2 class="text-center">本紹介の新規投稿</h2>
   <%= form_with(model: bookpost, local: true) do |f| %>
     <%= render 'layouts/error_messages', model: f.object %>
     <div class="form-wrap">
       <div class="row">
         <div class="col-sm-4 col-12">
-          <p><%= f.label :title, '■タイトル' %> <span class="text-danger">*</span></p>
+          <p><%= f.label :title, '■タイトル(30文字以内)' %> <span class="text-danger">*</span></p>
         </div>
         <div class="col-sm-8 col-12">
           <p><%= f.text_field :title, class: 'form-control', placeholder: '本のタイトルを入力してください' %></p>
@@ -23,10 +23,10 @@
 
       <div class="row">
         <div class="col-sm-4 col-12">
-          <p><%= f.label :description, '■説明' %> <span class="text-danger">*</span></p>
+          <p><%= f.label :description, '■紹介文' %> <span class="text-danger">*</span></p>
         </div>
         <div class="col-sm-8 col-12">
-          <p><%= f.text_area :description, class: 'form-control', placeholder: 'この本の説明を書いてください' %></p>
+          <p><%= f.text_area :description, class: 'form-control', placeholder: 'この本の紹介文を書いてください', rows: 5 %></p>
         </div>
       </div>
 
