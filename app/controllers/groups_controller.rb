@@ -2,7 +2,7 @@ class GroupsController < ApplicationController
   before_action :require_user_logged_in
   before_action :set_group, only: [:show, :edit, :update, :destroy]
   def index
-    @groups = Group.all.page(params[:page]).per(6)
+    @groups = Group.all.page(params[:page]).per(2)
   end
 
   def show
@@ -47,27 +47,27 @@ class GroupsController < ApplicationController
   end
 
   def readings
-    @reading_groups = Group.where(first_category: '読書').page(params[:page]).per(6)
+    @reading_groups = Group.where(first_category: '読書').page(params[:page]).per(10)
   end
 
   def studying_high
-    @studying_high_groups = Group.where(first_category: '勉強(高校)').page(params[:page]).per(6)
+    @studying_high_groups = Group.where(first_category: '勉強(高校)').page(params[:page]).per(10)
   end
 
   def studying_univ
-    @studying_univ_groups = Group.where(first_category: '勉強(大学・一般)').page(params[:page]).per(6)
+    @studying_univ_groups = Group.where(first_category: '勉強(大学・一般)').page(params[:page]).per(10)
   end
 
   def studying_language
-    @studying_language_groups = Group.where(first_category: '勉強(語学)').page(params[:page]).per(6)
+    @studying_language_groups = Group.where(first_category: '勉強(語学)').page(params[:page]).per(10)
   end
 
   def studying_exam
-    @studying_exam_groups = Group.where(first_category: '勉強(資格)').page(params[:page]).per(6)
+    @studying_exam_groups = Group.where(first_category: '勉強(資格)').page(params[:page]).per(10)
   end
 
   def programing
-    @programing_groups = Group.where(first_category: 'プログラミング').page(params[:page]).per(6)
+    @programing_groups = Group.where(first_category: 'プログラミング').page(params[:page]).per(10)
   end
 
   private

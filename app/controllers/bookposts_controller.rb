@@ -2,7 +2,7 @@ class BookpostsController < ApplicationController
   before_action :set_bookpost, only: [:show, :edit, :update, :destroy]
   before_action :require_user_logged_in
   def index
-    @bookposts = Bookpost.all.page(params[:page]).per(6)
+    @bookposts = Bookpost.all.page(params[:page]).per(2)
   end
 
   def show

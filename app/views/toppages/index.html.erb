@@ -2,7 +2,7 @@
     <h1 class="text-center">いつもの場所で新たな人や本と出会う</h1>
 </div>
 <div class="images-wrapper">
-    <div class="col-sm-12 offset-lg-2 col-lg-8 offset-lg-2">
+    <div class="col-sm-12">
         <div class="images">
             <li class="image active"><img src="/assets/library.jpg"></li>
             <li class="image"><img src="/assets/library_groupspace.jpg"></li>
@@ -14,44 +14,88 @@
             <div class="c-button"></div>
         </div>
 </div>
+<h2 class="text-center">本紹介</h2>
+<p class="text-center">札幌創世スクエアの図書館にある本を紹介し合って読みたい本を見つけましょう！</p>
+<p class="text-center">札幌創世スクエアの図書館は<span class="text-danger">【本の貸し出し禁止】</span>の図書館なので、いつでも気になった本を読みに行くことができます！</p>
+<% if @bookposts.any? %>
+    <div class="row">
+      <% @bookposts.each do |bookpost| %>
+        <div class="col-lg-3 col-md-6 col-6 for-smartphone">
+          <div class="contents-wrapper">
+            <%= link_to '', bookpost %>
+            <div class="contents">
+              <div class="content-title">
+                <%= bookpost.title.truncate(15) %>
+              </div>
+              <% if bookpost.bookimage? %>
+                <%= image_tag bookpost.bookimage.url(:thumb) %>
+              <% else %>
+                <img src="/assets/No_image.png">
+              <% end %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+<% else %>
+  <p>まだ投稿がありません</p>
+<% end %>
 
-<div class="row">
-    <div class="col-lg-4 col-sm-6">
-        <div class="contents-wrapper">
-            <div class="contents">
-                <div class="content-title">
-                    <h5>ほんの紹介</h5>
-                </div>
-                <img src="/assets/book1.jpg" >
-                <a class="content-link" href="#">詳細はこちら</a>
-            </div>
+<h2 class="text-center">グループ募集</h2>
+<p class="text-center">札幌創世スクエアでは毎日多くの人が読書を楽しんだり、勉強に励んでいます</p>
+<p class="text-center">グループを作成して趣味について語り合ったり、同じ志を持つ人たちと繋がりましょう</p>
+<% if @groups.any? %>
+<div class="row entire_wrapper">
+  <% @groups.each do |group| %>
+    <div class="row-external">
+      <div class="row row-internal">
+        <div class="col-lg-2 col-sm-3 col-4 pl-0 pr-0">
+          <div class="image_wrapper">
+            <% if group.image? %>
+              <%= image_tag group.image.url %>
+            <% else %>
+              <% case group.default_img_ptn 
+                when 0 %>
+                <img src="/assets/reading.jpg">
+              <% when 1 %>
+                <img src="/assets/studying.jpg">
+              <% when 2 %>
+                <img src="/assets/language.jpeg">
+              <% when 3 %>
+                <img src="/assets/programing.jpg">
+              <% when 4 %>
+                <img src="/assets/plant.jpg">
+              <% when 5 %>
+                <img src="/assets/landscape.jpg">
+              <% end %>
+            <% end %>
+            <p class="badge badge-secondary w-100 mb-0"><%= group.first_category %></p>
+            <%= link_to '', group %>
+          </div>
         </div>
-    </div>
-    <div class="col-lg-4 col-sm-6">
-        <div class="contents-wrapper">
-            <div class="contents">
-                <div class="content-title">
-                    <h5>ほんの紹介</h5>
-                </div>
-                <img src="/assets/book1.jpg" >
-                <a class="content-link" href="#">詳細はこちら</a>
-            </div>
+        <div class="col-lg-10 col-sm-9 col-8 contents">
+          <h4><%= group.group_name %></h4>
+          <p><%= group.group_description.truncate(50) %></p>
         </div>
+          <div class="offset-lg-2 offset-sm-3 col-sm-4 col-6 footer-left pl-0 pr-0">
+            <% if group.user.avatar? %>
+              <%= image_tag group.user.avatar.url(:icon) %>
+            <% else %>
+              <img src="/assets/defalut_avatar.png">
+            <% end %>
+            <span><%= group.user.username %></span>
+          </div>
+          <div class="col-lg-6 col-sm-5 col-6 text-right footer-right pl-0 pr-0">
+            <span><%= group.updated_at.strftime("%Y-%-m-%-d %H:%M") %></span>
+          </div>
+      </div>
     </div>
-    <div class="col-lg-4 col-sm-6">
-        <div class="contents-wrapper">
-            <div class="contents">
-                <div class="content-title">
-                    <h5>ほんの紹介</h5>
-                </div>
-                <img src="/assets/book1.jpg" >
-                <a class="content-link" href="#">詳細はこちら</a>
-            </div>
-        </div>
-    </div>
+  <% end %>
 </div>
+<% else %>
+  <p>グループはありません</p>
+<% end %>
 
-<%= render 'toppages/signup' %>
-<%= render 'layouts/login' %>
+
 <%= javascript_pack_tag 'toppages/toppages' %>
 <%= stylesheet_pack_tag 'toppages/toppages' %>

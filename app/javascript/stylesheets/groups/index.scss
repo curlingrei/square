@@ -1,7 +1,14 @@
+h2 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-bottom: solid #330000 3px;
+}
 //1行単位(外)
 .row-external {
   width: 80%;
-  border: solid 1px#DDDDDD;
+  border: solid #550000 1px;
+  border-radius: 20%;
+  box-shadow: 4px 4px;
   margin-top: 20px;
   margin-bottom: 20px;
   border-radius: 5px;
@@ -38,12 +45,14 @@
   }
 }
 
-.for-smartphone {
+.for-smartphone-dropdown {
   display: none;
 }
 @media(max-width: 576px){
   .row-external {
-    width: 100%;
+    width: 90%;
+    margin-right: auto;
+    margin-left: auto;
   }
   .image_wrapper {
       img {
@@ -54,9 +63,9 @@
   p {
     font-size: 10px;
   }
-  .badge {
-    font-size: 3px;
-  }
+  // .badge {
+  //   font-size: 3px;
+  // }
   
   .contents {
     h4 {
@@ -83,8 +92,8 @@
   }
   .tabs {
     display: none;
+    
   }
- 
 }
 
 .nav-link {
@@ -106,7 +115,7 @@
 
 .contents {
   h4 {
-    border-bottom: solid 1px #DDDDDD;
+    border-bottom: solid 1px #550000;
   }
 }
 
@@ -114,4 +123,21 @@
   width: 100%;
   flex-wrap: wrap;
 
+}
+
+/*ページネーション自体のデザイン*/
+.pagination>li>a {          
+  border: none;     /*枠線をなくす*/
+  color: #696969;   /*文字の色を変える*/
+}
+
+/* 表示しているページ番号のデザイン */
+.pagination>.active>a {     
+  background-color: #550000 !important;   /*背景の色を変える*/
+  border-radius: 15px;     /*角を丸くする*/
+}
+
+/*ホバー時のデザイン*/
+.pagination>li>a:hover {        
+  border-radius: 15px;    /*角を丸くする*/
 }

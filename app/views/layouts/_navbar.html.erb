@@ -1,6 +1,6 @@
-<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+<nav class="common-nav navbar navbar-expand-sm navbar-dark fixed-top">
   <a class="navbar-brand mr-auto" href="#"><i class="fas fa-book"></i>SQUARE</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu" aria-controls="#menu" aria-expanded="false" aria-label="Toggle navigation">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu" aria-controls="#menu" aria-expanded="true" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse justify-content-end" id="menu">
@@ -17,4 +17,5 @@
     </div>
   </div>
 </nav>
-<%= javascript_pack_tag 'application' %>
+<%= javascript_pack_tag 'toppages/navbar' %>
+<%= stylesheet_pack_tag 'toppages/navbar' %>

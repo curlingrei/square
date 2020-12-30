@@ -2,7 +2,7 @@
   <ul class="nav nav-tabs">
     <li class="nav-item">
       <% if current_page?(groups_path) %>
-        <%= link_to 'すべて', groups_path, class: 'nav-link active' %>
+        <%= link_to 'すべて', groups_path, class: 'nav-link active clicked' %>
       <% else %>
         <%= link_to 'すべて', groups_path, class: 'nav-link' %>
       <% end %>
@@ -53,7 +53,7 @@
   </ul>
 </div>
 
-<ul class="nav nav-tabs for-smartphone">
+<ul class="nav nav-tabs for-smartphone-dropdown">
   <li class="nav-item dropdown">
     <a class="nav-link dropdown-toggle" data-toggle="dropdown"
        href="#" role="button" aria-haspopup="true" aria-expanded="false">カテゴリ絞り込み:
