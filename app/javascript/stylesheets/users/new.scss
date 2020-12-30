@@ -1,12 +1,29 @@
+.form-wrapper {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
 .button {
     background-color: #550000;
     color: white;
     box-shadow: 0 6px #330000;
     opacity: 1;
     width: 100%;
-
+    outline: none;
+    border-radius: 8px;
 }
 
+.guest-login-btn {
+  background-color: #A0522D;
+  color: white;
+  box-shadow: 0 6px #550000;
+  opacity: 1;
+  width: 100%;
+  outline: none;
+  border-radius: 8px;
+  width: 100%;
+
+}
 .button:active{
     box-shadow: none;
     position:relative;
@@ -15,4 +32,15 @@
 
 .button:hover{
     opacity: 0.8;
+    outline: none !important;
+}
+
+h2 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-bottom: solid #330000 3px;
+}
+
+.form-control {
+  border: solid #550000 1px;
 }

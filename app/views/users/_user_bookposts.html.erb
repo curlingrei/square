@@ -1,0 +1,25 @@
+<%= render 'users/user_tab' %>
+<% if bookposts.any? %>
+    <div class="row">
+      <% bookposts.each do |bookpost| %>
+        <div class="col-lg-3 col-md-4 col-6 for-smartphone">
+          <div class="contents-wrapper">
+            <%= link_to '', bookpost %>
+            <div class="contents">
+              <div class="content-title">
+                <%= bookpost.title.truncate(15) %>
+              </div>
+              <% if bookpost.bookimage? %>
+                <%= image_tag bookpost.bookimage.url(:thumb) %>
+              <% else %>
+                <img src="/assets/No_image.png">
+              <% end %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <div class="pagination"><%= paginate bookposts %></div>
+<% else %>
+  <p>まだ投稿がありません</p>
+<% end %>

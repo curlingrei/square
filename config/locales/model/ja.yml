@@ -1,0 +1,25 @@
+ja:
+  activerecord:
+    models:
+      user:
+      bookpost:
+      group:
+      bookcomment:
+    attributes:
+      user:
+        username: ユーザー名
+        email: メールアドレス
+        password: パスワード
+      bookpost:
+        title: タイトル
+        category: ジャンル
+        description: 紹介文
+        bookimage: このファイル
+      group:
+        group_name: タイトル
+        first_category: カテゴリ
+        target_number: 募集人数
+        group_description: 紹介文
+        sample_or_upload: サンプル画像から選択するか、画像をアップロードしてください
+      bookcomment:
+        message: コメント

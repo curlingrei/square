@@ -1,2 +1,19 @@
-<h1>ログイン中ユーザ<%= current_user.username %><h1>
-<%= link_to '退会する', @user, method: :delete, data:{confirm: '本当に削除してよろしいですか?'}, class: 'btn btn-outline-danger' %>
+<h2 class="text-center">マイページ</h2>
+<h4 class="text-center mb-2"><%= current_user.username %></h4>
+
+ <div class="icon_wrapper">
+    <% if current_user.avatar? %>
+      <%= image_tag current_user.avatar.url %>
+    <% else %>
+      <img src="/assets/defalut_avatar.png">
+    <% end %>
+  </div>
+  <div class="user-edit">
+    <%= link_to edit_user_path, class: 'btn edit-btn' do %>
+      <i class="fas fa-user-edit"></i> ユーザ情報を編集する
+    <% end %>
+  </div>
+<%= render 'users/user_bookposts', bookposts: @mybookposts %>
+
+<%= javascript_pack_tag 'users/show' %>
+<%= stylesheet_pack_tag 'users/show' %>

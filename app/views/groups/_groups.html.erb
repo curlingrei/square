@@ -1,5 +1,10 @@
+<h2 class="text-center">グループ一覧</h2>
+<div class="new-bookpost">
+  <%= link_to new_group_path, class: 'btn btn-outline-secondary mb-3' do %>
+    <i class="fas fa-plus"></i> 新規作成する
+  <% end %>
+</div>
 <%= render 'groups/tab' %>
-
 <% if groups.any? %>
 <div class="row entire_wrapper">
   <% groups.each do |group| %>

@@ -1,10 +1,11 @@
 <h2 class="text-center">新規グループ作成</h2>
+
 <%= form_with model: group, local: true do |f| %>
-  <%= render 'layouts/error_messages', model: f.object %>
   <div class="form-wrapper">
+    <%= render 'layouts/error_messages', model: f.object %>
     <div class="row">
-      <div class="col-sm-4">
-        <p><%= f.label :group_name, '■タイトル' %> <span class="text-danger">*</span></p>
+      <div class="col-sm-4 col-12">
+        <p><%= f.label :group_name, '■タイトル(50文字以内)' %> <span class="text-danger">*</span></p>
       </div>
       <div class="col-sm-8 col-12">
         <p><%= f.text_field :group_name, class: 'form-control', placeholder: 'タイトルを入力してください' %></p>
@@ -16,7 +17,7 @@
         <p><%= f.label :first_category, '■カテゴリ' %> <span class="text-danger">*</span></p>
       </div>
       <div class="col-sm-8 col-12">
-        <p><%= f.select :first_category, ['読書', '勉強(高校)', '勉強(大学・一般)', '勉強(語学)', '勉強(資格)', 'プログラミング'], include_blank: '選択してください'%></p>
+        <p><%= f.select :first_category, ['読書', '勉強(高校)', '勉強(大学・一般)', '勉強(語学)', '勉強(資格)', 'プログラミング'], {include_blank: '選択してください'}, class: 'form-control' %></p>
       </div>
     </div>
 
@@ -25,7 +26,7 @@
         <p><%= f.label :target_number, '■募集人数' %> <span class="text-danger">*</span></p>
       </div>
       <div class="col-sm-8 col-12">
-        <p><%= f.select :target_number, [1, 2, 3, 4, 5], include_blank: '選択してください' %></p>
+        <p><%= f.select :target_number, [1, 2, 3, 4, 5], {include_blank: '選択してください'}, class: 'form-control' %></p>
       </div>
     </div>
 
@@ -34,7 +35,7 @@
         <p><%= f.label :target_age, '■年齢' %></p>
       </div>
       <div class="col-sm-8 col-12">
-        <p><%= f.text_field :target_age, placeholder: '(例) 高校生, 20代, 10代~30代', class: 'form-control'%></p>
+        <p><%= f.text_field :target_age, placeholder: '(例) 高校生, 20代, 10代~30代', class: 'form-control' %></p>
       </div>
     </div>
 
@@ -43,7 +44,7 @@
         <p><%= f.label :target_sex, '■性別' %></p>
       </div>
       <div class="col-sm-8 col-12">
-        <p><%= f.select :target_sex, ['男性のみ', '女性のみ', '男女不問'], include_blank: '選択してください' %></p>
+        <p><%= f.select :target_sex, ['男性のみ', '女性のみ', '男女不問'], {include_blank: '選択してください'}, class: 'form-control' %></p>
       </div>
     </div>
 
@@ -61,7 +62,7 @@
         <p><%= f.label :group_description, '■紹介文' %> <span class="text-danger">*</span></p>
       </div>
       <div class="col-sm-8 col-12">
-        <p><%= f.text_area :group_description, class: 'form-control', placeholder: 'タイトルを入力してください' %></p>
+        <p><%= f.text_area :group_description, class: 'form-control', placeholder: 'グループを紹介する文章を入力してください', rows: 5 %></p>
       </div>
     </div>
     <%= f.hidden_field :default_img_ptn %>
@@ -95,7 +96,7 @@
     サンプル画像を使用する
   </div>
 
-  <%= f.submit '確定', class: 'btn btn-outline-secondary w-100' %>
+  <%= f.submit '確定', class: 'button' %>
   <% end %>
 </div>
 

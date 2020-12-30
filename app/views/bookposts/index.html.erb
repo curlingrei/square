@@ -1,14 +1,19 @@
+<h2 class="text-center">本紹介一覧</h2>
+<div class="new-bookpost">
+  <%= link_to new_bookpost_path, class: 'btn' do %>
+    <i class="fas fa-plus"></i> 新規投稿する
+  <% end %>
+</div>
 <% if @bookposts.any? %>
     <div class="row">
       <% @bookposts.each do |bookpost| %>
-        <div class="col-lg-4 col-sm-6">
+        <div class="col-lg-3 col-md-4 col-6 for-smartphone">
           <div class="contents-wrapper">
             <%= link_to '', bookpost %>
             <div class="contents">
               <div class="content-title">
-                <%= bookpost.title.truncate(20) %>
+                <%= bookpost.title.truncate(15) %>
               </div>
-              <p><span class="badge badge-secondary"><%= bookpost.category %></span></p>
               <% if bookpost.bookimage? %>
                 <%= image_tag bookpost.bookimage.url(:thumb) %>
               <% else %>
@@ -19,7 +24,7 @@
         </div>
       <% end %>
     </div>
-  <%= paginate @bookposts %>
+  <div class="pagination"><%= paginate @bookposts %></div>
 <% else %>
   <p>まだ投稿がありません</p>
 <% end %>

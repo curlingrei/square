@@ -1,0 +1,15 @@
+<h2 class="text-center">マイページ</h2>
+<h4 class="text-center mb-2"><%= current_user.username %></h4>
+
+ <div class="icon_wrapper">
+    <% if current_user.avatar? %>
+      <%= image_tag current_user.avatar.url %>
+    <% else %>
+      <img src="/assets/defalut_avatar.png">
+    <% end %>
+  </div>
+  <div class="user-edit">
+    <%= link_to edit_user_path(current_user), class: 'btn edit-btn' do %>
+      <i class="fas fa-user-edit"></i> ユーザ情報を編集する
+    <% end %>
+  </div>

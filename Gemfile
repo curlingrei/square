@@ -69,3 +69,5 @@ gem 'rails_admin', '~> 2.0'
 gem 'carrierwave', '~> 2.0'
 
 gem 'rmagick'
+
+gem 'rails-i18n'
