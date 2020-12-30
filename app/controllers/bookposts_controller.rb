@@ -20,7 +20,7 @@ class BookpostsController < ApplicationController
   def create
     @bookpost = current_user.bookposts.build(bookpost_params)
     if @bookpost.save
-      flash[:success] = '投稿しました'
+      flash[:light] = '投稿しました'
       redirect_to @bookpost
     else
       render :new
@@ -31,7 +31,7 @@ class BookpostsController < ApplicationController
 
   def update
     if @bookpost.update_attributes(bookpost_params)
-      flash[:success] = '投稿内容を更新しました'
+      flash[:light] = '投稿内容を更新しました'
       redirect_to @bookpost
     else
       render :edit
@@ -40,7 +40,7 @@ class BookpostsController < ApplicationController
 
   def destroy
     @bookpost.destroy
-    flash[:success] = '投稿を削除しました'
+    flash[:light] = '投稿を削除しました'
     redirect_to action: :index
   end
 

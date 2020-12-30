@@ -1,12 +1,7 @@
-<h2 class="text-center">本紹介一覧</h2>
-<div class="new-bookpost">
-  <%= link_to new_bookpost_path, class: 'btn' do %>
-    <i class="fas fa-plus"></i> 新規投稿する
-  <% end %>
-</div>
-<% if @bookposts.any? %>
+<%= render 'users/user_tab' %>
+<% if bookposts.any? %>
     <div class="row">
-      <% @bookposts.each do |bookpost| %>
+      <% bookposts.each do |bookpost| %>
         <div class="col-lg-3 col-md-4 col-6 for-smartphone">
           <div class="contents-wrapper">
             <%= link_to '', bookpost %>
@@ -24,10 +19,7 @@
         </div>
       <% end %>
     </div>
-  <div class="pagination"><%= paginate @bookposts %></div>
+  <div class="pagination"><%= paginate bookposts %></div>
 <% else %>
   <p>まだ投稿がありません</p>
 <% end %>
-
-<%= javascript_pack_tag 'bookposts/index' %>
-<%= stylesheet_pack_tag 'bookposts/index' %>

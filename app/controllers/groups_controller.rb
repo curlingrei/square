@@ -8,7 +8,6 @@ class GroupsController < ApplicationController
   def show
     @participate = current_user.participates.build
     @participated = Participate.find_by(group_id: @group.id)
-    # @participated = Participate.find_by(group_id: @group.id)
     @participates = @group.participates
   end
 
@@ -19,7 +18,7 @@ class GroupsController < ApplicationController
   def create
     @group = current_user.groups.build(groups_params)
     if @group.save
-      flash[:success] = 'グループを作成しました'
+      flash[:light] = 'グループを作成しました'
       redirect_to @group
     else
        render :new
@@ -31,17 +30,17 @@ class GroupsController < ApplicationController
 
   def update
     if @group.update_attributes(groups_params)
-      flash[:success] = 'グループの情報を更新しました'
+      flash[:light] = 'グループの情報を更新しました'
       redirect_to @group
     else
-       flash[:danger] = 'グループ情報の更新に失敗しました'
+       flash[:light] = 'グループ情報の更新に失敗しました'
        render :edit
     end
   end
 
   def destroy
     @group.destroy
-    flash[:success] = 'グループを削除しました'
+    flash[:light] = 'グループを削除しました'
     redirect_to groups_url
   end
 

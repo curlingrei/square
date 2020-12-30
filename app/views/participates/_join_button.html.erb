@@ -9,7 +9,7 @@
   <% else %>
     <%= form_with model: [group, @participate], method: :post do |f| %>
       <%= f.hidden_field :group_id, :value => group.id %>
-      <%= f.submit '参加する', class: 'btn-outline-primary form-control' %>
+      <%= f.submit '参加する', class: 'btn-outline-secondary form-control' %>
     <% end %>
   <% end %>
 <% end %>

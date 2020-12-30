@@ -3,7 +3,7 @@ class GuestLoginController < SessionsController
     email = 'guest@user.com'
     password = 'guestuser'
     if login(email, password)
-      flash[:success] = 'ゲストユーザとしてログインしました'
+      flash[:light] = 'ゲストユーザとしてログインしました'
       redirect_to @user
     end
   end

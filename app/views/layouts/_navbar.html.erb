@@ -6,7 +6,6 @@
   <div class="collapse navbar-collapse justify-content-end" id="menu">
     <div class="navbar-nav">
         <% if logged_in? %>
-          <p class="text-light nav-item"><%= current_user.username %></p>
           <%= link_to current_user, class: 'nav-item nav-link' do %>
             <i class="far fa-user-circle"></i> マイページ
           <% end %>

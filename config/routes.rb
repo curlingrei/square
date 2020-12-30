@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  get 'sessions/new'
-  get 'sessions/create'
-  get 'sessions/destroy'
+  # get 'sessions/new'
+  # get 'sessions/create'
+  # get 'sessions/destroy'
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   get 'toppages/index'
   root 'toppages#index'
@@ -28,5 +28,10 @@ Rails.application.routes.draw do
   get 'studying_language', to: 'groups#studying_language'
   get 'studying_exam', to: 'groups#studying_exam'
   get 'programing', to: 'groups#programing'
+  get 'mybookposts', to: 'users#show'
+  get  'mygroups', to: 'users#mygroups'
+  get 'joining_groups', to: 'users#joining_groups'
+  get 'like_bookposts', to: 'users#like_bookposts'
+  
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

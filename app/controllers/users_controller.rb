@@ -3,11 +3,12 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit]
   # prevent users from modifying guest_user
   before_action :guest_user?, only: [:edit, :update, :destroy]
-  def index
-    @users = User.all.page(params[:page]).per(5)
-  end
+  before_action :yourself?, only: [:show, :edit, :update, :destroy]
+  def index; end
 
-  def show; end
+  def show
+    @mybookposts = current_user.bookposts.page(params[:page]).per(8)
+  end
 
   def new
     @user = User.new
@@ -16,7 +17,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      flash[:success] = 'ユーザ登録が完了しました'
+      flash[:light] = 'ユーザ登録が完了しました'
       redirect_to @user
     else
       render :new
@@ -28,7 +29,7 @@ class UsersController < ApplicationController
   def update
     @user = current_user
     if @user.update_attributes(user_params)
-      flash[:success] = 'ユーザ情報を更新しました'
+      flash[:light] = 'ユーザ情報を更新しました'
       redirect_to @user
     else
       render :edit
@@ -37,8 +38,20 @@ class UsersController < ApplicationController
 
   def destroy
     current_user.destroy
-    flash[:success] = '退会しました'
+    flash[:light] = '退会しました'
     redirect_to :root
+  end
+
+  def mygroups
+    @mygroups = current_user.groups.page(params[:page]).per(8)
+  end
+
+  def joining_groups
+    @joining_groups = current_user.joining_groups.page(params[:page]).per(8)
+  end
+
+  def like_bookposts
+    @like_bookposts = current_user.like_bookposts.page(params[:page]).per(8)
   end
 
   private
@@ -54,9 +67,14 @@ class UsersController < ApplicationController
   # guest_user or not
   def guest_user?
     if current_user.email == 'guest@user.com' && current_user.username == 'ゲストユーザー'
-      flash[:warning] = 'ゲストユーザーの情報を変更したり削除することはできません'
+      flash[:light] = 'ゲストユーザーの情報を変更したり削除することはできません'
       redirect_back(fallback_location: root_path)
     end
+  end
+
+  def yourself?
+    set_user
+    redirect_back(fallback_location: root_path) unless @user == current_user
   end
 
 end

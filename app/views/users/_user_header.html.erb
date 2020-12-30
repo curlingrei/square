@@ -9,11 +9,7 @@
     <% end %>
   </div>
   <div class="user-edit">
-    <%= link_to edit_user_path, class: 'btn edit-btn' do %>
+    <%= link_to edit_user_path(current_user), class: 'btn edit-btn' do %>
       <i class="fas fa-user-edit"></i> ユーザ情報を編集する
     <% end %>
   </div>
-<%= render 'users/user_bookposts', bookposts: @mybookposts %>
-
-<%= javascript_pack_tag 'users/show' %>
-<%= stylesheet_pack_tag 'users/show' %>

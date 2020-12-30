@@ -9,7 +9,7 @@ class User < ApplicationRecord
   has_many :bookposts
   mount_uploader :avatar, AvatarUploader
   has_many :booklikes
-  has_many :liked_bookposts, through: :booklikes, source: :bookpost
+  has_many :like_bookposts, through: :booklikes, source: :bookpost
   has_many :bookcomments
   has_many :commentlikes
   has_many :groups
