@@ -53,18 +53,14 @@ h2 {
 }
 .content-title {
     padding-top: 20px;
-    font-size: 12px;
+    padding-bottom: 10px;
+    font-size: 20px;
 }
 
 .contents {
     width: 80%;
     margin-left: auto;
     margin-right: auto;
-
-    p {
-        font-size: 6px;
-        font-weight: bold;
-    }
 
     img {
         width: 100%;
@@ -120,7 +116,6 @@ h2 {
   margin: 20px;
 }
 //画像
-
 .image_wrapper {
     width: 100%; 
     position: relative;
@@ -171,15 +166,12 @@ h2 {
       }
   }
   .content-title {
-    font-size: 4px;
+    font-size: 12px;
+    padding-bottom: 0px;
 }
 .for-smartphone {
   padding-right: 5px;
   padding-left: 5px;
-}
-.badge {
-  font-size: 4px;
-
 }
 }
 @media(max-width: 576px){
@@ -210,17 +202,19 @@ h2 {
   }
   .footer-left {
     img {
-      width: 15px;
-      height: 15px;
+      width: 20px;
+      height: 20px;
       border: solid 1px white;
-      border-radius: 5px;
+      border-radius: 6px;
     }
     span {
-      font-size: 8px;
+      font-size: 12px;
     }
   }
   .footer-right {
-    font-size: 8px;
+    font-size: 12px;
+    margin-top: auto;
+    margin-bottom: auto;
   }
 
   .for-smartphone-dropdown {
