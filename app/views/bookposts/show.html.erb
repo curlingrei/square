@@ -42,7 +42,7 @@
       <div class="row other-info">
         <div class="col-6 other-info-left">
           <% if @bookpost.user.avatar? %>
-            <%= image_tag comment.user.avatar.url(:icon) %>
+            <%= image_tag @bookpost.user.avatar.url(:icon) %>
           <% else %>
             <img src="/assets/defalut_avatar.png">
           <% end %>
