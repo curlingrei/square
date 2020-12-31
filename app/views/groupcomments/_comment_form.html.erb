@@ -1,0 +1,10 @@
+<%= form_with model: [group, @groupcomment]  do |f| %>
+  <div id="error_message"></div>
+    <%= f.text_area :comment, class: 'form-control', id: 'comment-form', placeholder: 'コメントを入力', rows: 2 %>
+    <%= f.hidden_field :group_id, :value => group.id %>
+    <div class = comment-submit-wrapper>
+      <%= button_tag type: 'submit', class: 'comment-submit' do %>
+        <i class="fab fa-telegram-plane"></i>
+      <% end %>
+    </div>
+<% end %>

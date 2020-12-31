@@ -1,0 +1,3 @@
+$('.groupcomments').html("<%= j(render 'groupcomments/group_comments', groupcomments: @groupcomments) %>");
+$('#error_message').html("<%= j(render 'layouts/error_messages', model: @groupcomment) %>");
+$('textarea').val('');

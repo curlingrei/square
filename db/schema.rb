@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_31_012744) do
+ActiveRecord::Schema.define(version: 2020_12_31_014937) do
 
   create_table "bookcomments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "user_id", null: false
@@ -51,6 +51,16 @@ ActiveRecord::Schema.define(version: 2020_12_31_012744) do
     t.index ["bookcomment_id"], name: "index_commentlikes_on_bookcomment_id"
     t.index ["user_id", "bookcomment_id"], name: "index_commentlikes_on_user_id_and_bookcomment_id", unique: true
     t.index ["user_id"], name: "index_commentlikes_on_user_id"
+  end
+
+  create_table "groupcommentlikes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "groupcomment_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["groupcomment_id"], name: "index_groupcommentlikes_on_groupcomment_id"
+    t.index ["user_id", "groupcomment_id"], name: "index_groupcommentlikes_on_user_id_and_groupcomment_id", unique: true
+    t.index ["user_id"], name: "index_groupcommentlikes_on_user_id"
   end
 
   create_table "groupcomments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -105,6 +115,8 @@ ActiveRecord::Schema.define(version: 2020_12_31_012744) do
   add_foreign_key "bookposts", "users"
   add_foreign_key "commentlikes", "bookcomments"
   add_foreign_key "commentlikes", "users"
+  add_foreign_key "groupcommentlikes", "groupcomments"
+  add_foreign_key "groupcommentlikes", "users"
   add_foreign_key "groupcomments", "groups"
   add_foreign_key "groupcomments", "users"
   add_foreign_key "groups", "users"

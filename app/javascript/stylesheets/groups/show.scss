@@ -9,6 +9,13 @@ body {
   // position: relative;
 }
 
+.group-comment-wrapper {
+  width: 85%;
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .image_wrapper {
   width: 100%;
   margin-bottom: 20px;
@@ -41,13 +48,17 @@ body {
 }
 
 //ユーザアイコン
-.other-info {
+
+.other-info-left {
   img {
       width: 30px;
       height: 30px;
       border: solid 1px white;
       border-radius: 20px;
   }
+}
+.other-info-right {
+text-align: right;
 }
 
 .joining-users {
@@ -60,10 +71,9 @@ body {
   }
 }
 
-// .fas {
-//   text-decoration: none;
-//   color: black;
-// }
+.fa-trash-alt {
+  color: black;
+}
 
 .icons {
   font-size: 20px;
@@ -131,11 +141,11 @@ h4 {
   width: 100%;
   text-align: right;
 }
-.comment-header-right {
-  font-size: 8px;
-  margin-top: auto;
-  margin-bottom: auto;
-}
+// .comment-header-right {
+//   // font-size: 8px;
+//   margin-top: auto;
+//   margin-bottom: auto;
+// }
 
 //コメントの削除ボタン
 .delete-btn {
@@ -163,19 +173,6 @@ h4 {
 }
 @media(max-width: 420px){
   .comment-header-left {
-      font-size: 8px;
-      img {
-          width: 20px;
-          height: 20px;
-          border: solid 1px white;
-          border-radius: 10px;
-      }
-    }
-    .wrapper {
-      width: 100%;
-      margin-bottom: 15px;
-    }
-    .other-info {
       font-size: 12px;
       img {
           width: 20px;
@@ -183,6 +180,31 @@ h4 {
           border: solid 1px white;
           border-radius: 10px;
       }
+    }
+
+    .comment-header-right {
+      font-size: 12px;
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+
+    .wrapper {
+      width: 100%;
+      margin-bottom: 15px;
+    }
+  
+    .other-info-left {
+      font-size: 12px;
+      img {
+          width: 20px;
+          height: 20px;
+          border: solid 1px white;
+          border-radius: 10px;
+      }
+    }
+    .other-info-right {
+      font-size: 12px;
+      text-align: right;
     }
   }
   
@@ -197,14 +219,17 @@ h4 {
   }
 }
 
-@media(max-width: 768px){
-  .entire_wrapper {
-    width: 100%;
-  }
-}
+// @media(max-width: 768px){
+//   .entire_wrapper {
+//     width: 100%;
+//   }
+// }
 
 @media(max-width: 991px){
   .entire_wrapper {
+    width: 100%;
+  }
+  .group-comment-wrapper {
     width: 100%;
   }
 }

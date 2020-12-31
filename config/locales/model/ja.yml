@@ -23,3 +23,5 @@ ja:
         sample_or_upload: サンプル画像から選択するか、画像をアップロードしてください
       bookcomment:
         message: コメント
+      groupcomment:
+        comment: コメント
