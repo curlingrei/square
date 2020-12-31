@@ -9,7 +9,9 @@ class CommentlikesController < ApplicationController
     current_user.comment_dislike(@target_comment)
     @commentlike = current_user.commentlikes.new
   end
-
+  
+  private
+  
   def set_target_comment
     @target_comment = Bookcomment.find_by(id: params[:bookcomment_id])
     @bookpost = Bookpost.find_by(id: params[:bookpost_id])

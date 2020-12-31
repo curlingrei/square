@@ -39,15 +39,19 @@
         <h1><%= @bookpost.description %></h1>
       </div>
     </div>
-    <div class="other-info">
-        <% if @bookpost.user.avatar? %>
-          <%= image_tag @bookpost.user.avatar.url(:icon) %>
-        <% else %>
-          <img src="/assets/defalut_avatar.png">
-        <% end %>
-        <%= @bookpost.user.username %>
-        <%= @bookpost.updated_at.strftime("%Y/%-m/%-d %H:%M") %>
-    </div>
+      <div class="row other-info">
+        <div class="col-6 other-info-left">
+          <% if @bookpost.user.avatar? %>
+            <%= image_tag comment.user.avatar.url(:icon) %>
+          <% else %>
+            <img src="/assets/defalut_avatar.png">
+          <% end %>
+            <%=@bookpost.user.username %>
+         </div>
+        <div class="col-6 other-info-right">
+          <%= @bookpost.updated_at.strftime("%Y/%-m/%-d %H:%M") %>
+        </div>
+      </div>
   </div>
 </div>
 <h4><span><i class="far fa-comments"></i></span>コメント</h4>

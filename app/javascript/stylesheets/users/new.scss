@@ -44,3 +44,10 @@ h2 {
 .form-control {
   border: solid #550000 1px;
 }
+
+@media(max-width: 576px){
+  .form-wrapper {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+}

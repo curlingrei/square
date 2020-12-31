@@ -1,0 +1,36 @@
+<% if groupcomments.any? %>
+  <% groupcomments.each do |comment| %>
+    <div class="comment-wrapper">
+      <div class="row comment-header">
+        <div class="col-6 comment-header-left">
+          <% if comment.user.avatar? %>
+            <%= image_tag comment.user.avatar.url(:icon) %>
+          <% else %>
+            <img src="/assets/defalut_avatar.png">
+          <% end %>
+            <%= comment.user.username %>
+         </div>
+        <div class="col-6 comment-header-right">
+          <%= comment.updated_at.strftime("%Y/%-m/%-d %H:%M") %>
+        </div>
+      </div>
+      <p class="comment-main"><%= comment.comment %></p>
+      <% unless comment.user == current_user %>
+        <div id="groupcommentlikes-<%= comment.id %>">
+          <%= render 'groupcommentlikes/commentlike', comment: comment %>
+        </div>
+      <% else %>
+        <div class="row comment-footer">
+          <div class="comment-footer-left col-6">
+            <span class="dispaly-heart">♡</span><%= comment.groupcommentlikes.count %>
+          </div>
+          <div class="comment-footer-right col-6">
+            <%= link_to '', group_groupcomment_path(@group, comment), method: :delete, remote: true,  class: 'fas fa-trash-alt'%>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+<% else %>
+  <p>コメントはありません</p>
+<% end %>

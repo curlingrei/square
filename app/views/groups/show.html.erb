@@ -35,15 +35,22 @@
       <div class="description">
         <h1><%= @group.group_description %></h1>
       </div>
-      <div class="other-info">
+
+      <div class="row other-info">
+        <div class="col-6 other-info-left">
           <% if @group.user.avatar? %>
-            <%= image_tag @group.user.avatar.url(:icon) %>
+            <%= image_tag comment.user.avatar.url(:icon) %>
           <% else %>
             <img src="/assets/defalut_avatar.png">
           <% end %>
-          <%= @group.user.username %>
+            <%=@group.user.username %>
+         </div>
+        <div class="col-6 other-info-right">
           <%= @group.updated_at.strftime("%Y/%-m/%-d %H:%M") %>
+        </div>
       </div>
+
+
     </div>
   </div>
   <div class="col-lg-4 col-md-4 col-sm-12 col-12">
@@ -64,8 +71,16 @@
     </div>
     <% end %>
   </div>
-  <div class="col-12">
-    <p>コメント</p>
+</div>
+<div class="group-comment-wrapper">
+  <h4><span><i class="far fa-comments"></i></span>コメント</h4>
+  <div class="row">
+    <div class="col-lg-8 col-md-12">
+      <%= render 'groupcomments/comment_form', group: @group %>
+    </div>
+  </div>
+  <div class="col-lg-8 col-md-12 groupcomments">
+    <%= render 'groupcomments/group_comments', groupcomments: @groupcomments %>
   </div>
 </div>
 <%= javascript_pack_tag 'groups/show' %>

@@ -9,6 +9,7 @@ class Group < ApplicationRecord
   validates :group_description, presence: true
   validates :sample_or_upload, presence: {message: ''}
   has_many :participates, dependent: :destroy
+  has_many :groupcomments, dependent: :destroy
 
   private
     def sample_or_upload

@@ -9,6 +9,9 @@ class GroupsController < ApplicationController
     @participate = current_user.participates.build
     @participated = Participate.find_by(group_id: @group.id)
     @participates = @group.participates
+    @groupcomment = current_user.groupcomments.new
+    @groupcomments = @group.groupcomments
+    @groupcommentlike = current_user.groupcommentlikes.new
   end
 
   def new

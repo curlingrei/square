@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  # get 'groupcommentlikes/create'
+  # get 'groupcommentlikes/destroy'
+  # get 'groupcomments/create'
+  # get 'groupcomments/destroy'
   # get 'sessions/new'
   # get 'sessions/create'
   # get 'sessions/destroy'
@@ -14,13 +18,16 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :new, :create, :edit, :update, :destroy]
   resources :bookposts do
     resources :booklikes, only: [:create, :destroy]
-    resources :bookcomments, only: [:create, :update, :destroy] do
+    resources :bookcomments, only: [:create, :destroy] do
       resources :commentlikes, only: [:create, :destroy]
     end
   end
   resources :booklikes, only: [:create, :destroy]
   resources :groups do
     resources :participates, only: [:create, :destroy]
+    resources :groupcomments, only: [:create, :destroy] do
+      resources :groupcommentlikes, only: [:create, :destroy]
+    end
   end
   get 'readings', to: 'groups#readings'
   get 'studying_high', to: 'groups#studying_high'
