@@ -1,1 +1,5 @@
+<h2 class="text-center">本紹介の情報を更新する</h2>
 <%= render 'bookpost_form', bookpost: @bookpost %>
+<% if @bookpost.user == current_user %>
+  <div class="form-wrap mt-3"><%= link_to 'この投稿を削除する', @bookpost, method: :delete, data:{confirm: '本当に削除してよろしいですか？'}, class: 'btn btn-outline-danger w-100' %></div>
+<% end %>
