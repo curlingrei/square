@@ -1,4 +1,4 @@
-<% if current_user.comment_like?(comment) %>
+<% if current_user.group_comment_like?(comment) %>
   <%= form_with model: [@group, comment, comment.groupcommentlikes.find_by(groupcomment_id: comment.id)], method: :delete do |f| %>
     <%= f.hidden_field :group_id, :value => @group.id %>
     <%= f.hidden_field :groupcomment_id, :value => comment.id %>

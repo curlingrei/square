@@ -76,7 +76,7 @@ class User < ApplicationRecord
     target_comment.destroy if target_comment
   end
 
-  def comment_like?(comment)
+  def group_comment_like?(comment)
     groupcommentlikes.exists?(groupcomment_id: comment.id)
   end
 end
