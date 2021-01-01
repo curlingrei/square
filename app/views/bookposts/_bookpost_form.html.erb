@@ -32,11 +32,7 @@
     <p class="mb-0"><%= f.label :bookimage, '■本の画像' %></p>
       <p><%= f.file_field :bookimage %></p>
     <p><%= f.check_box :remove_bookimage %> デフォルトの画像を使用する</p>
-    <% if current_page?(new_bookpost_path) %>
-      <%= f.submit '投稿', class: 'button' %>
-    <% else %>
-      <%= f.submit '更新', class: 'button' %>
-    <% end %>
+      <%= f.submit '確定', class: 'button' %>
   </div>
 <% end %>
 <%= javascript_pack_tag 'bookposts/new' %>
