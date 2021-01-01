@@ -2,6 +2,7 @@ h2 {
   margin-top: 20px;
   margin-bottom: 20px;
   border-bottom: solid #330000 3px;
+  font-weight: bold;
 }
 .form-wrapper {
   width: 80%;
@@ -29,6 +30,7 @@ h2 {
   width: 100%;
   margin-right: auto;
   margin-left: auto;
+  margin-bottom: 10px;
 }
 .hide {
     display: none;
@@ -76,9 +78,19 @@ h2 {
   border: solid #550000 1px;
 }
 
+.remove_check{
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
 @media(max-width: 576px){
   .form-wrapper {
     width: 100%;
     margin-bottom: 30px;
+  }
+}
+
+@media(min-width: 577px) and (max-width: 770px){
+  .form-wrapper {
+    width: 90%;
   }
 }

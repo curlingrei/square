@@ -36,6 +36,7 @@
 }
 
 h2 {
+  font-weight: bold;
   margin-top: 20px;
   margin-bottom: 20px;
   border-bottom: solid #330000 3px;
@@ -43,6 +44,11 @@ h2 {
 
 .form-control {
   border: solid #550000 1px;
+}
+
+.checkbox {
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 @media(max-width: 576px){

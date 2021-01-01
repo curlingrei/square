@@ -1,7 +1,8 @@
 // サイト見出し
-.title {
+.title h1 {
     margin-top: 20px;
     margin-bottom: 30px;
+    font-weight: bold;
 }
 //サブタイトル
 
@@ -9,6 +10,7 @@ h2 {
   margin-top: 30px;
   margin-bottom: 20px;
   border-bottom: solid #330000 3px;
+  font-weight: bold;
 }
 
 .btn {
@@ -57,6 +59,7 @@ img {
     display: block;
 }
 
+
 //メイン画像の高さ調節
 @media(max-width: 576px){
   img {
@@ -64,7 +67,10 @@ img {
   }
   //サイト見出し
   .title h1 {
-      font-size: 20px;
+      font-size: 16px;
+  }
+  h2 {
+    font-size: 14px;
   }
 }
 
@@ -75,6 +81,10 @@ img {
   .title h1 {
       font-size: 25px;
   }
+
+  h2 {
+    font-size: 21px;
+  }
 }
 
 @media(min-width: 961px){
@@ -83,34 +93,8 @@ img {
   }
 }
 
-
-
-// .contents-wrapper {
-//   width: 100%;
-//   height: auto;
-//   border: solid #550000 1px;
-//   border-radius: 20%;
-//   margin-top: 20px;
-//   position: relative;
-//   opacity: 1;
-//   box-shadow: 4px 4px;
-// }
-
-// .contents {
-//   width: 80%;
-//   margin-left: auto;
-//   margin-right: auto;
-//   img {
-//       width: 100%;
-//       height: 180px;
-//       display: inline-block;
-//       margin-top: 0px;
-//       margin-bottom: 30px;
-//       border-radius: 20%;
-//   }
-// }
-
 //bookpost
+
 .contents-wrapper {
   width: 100%;
   height: auto;
@@ -134,7 +118,7 @@ img {
 }
 .content-title {
   padding-top: 20px;
-  font-size: 12px;
+  font-size: 15px;
 }
 
 .contents {
@@ -170,67 +154,13 @@ img {
       }
   }
   .content-title {
-    font-size: 4px;
+    font-size: 12px;
 }
 .for-smartphone {
   padding-right: 5px;
   padding-left: 5px;
+  }
 }
-.badge {
-  font-size: 4px;
-
-}
-}
-// // コンテンツ
-// .contents-wrapper {
-//   width: 100%;
-//   height: auto;
-//   margin-top: 20px;
-// }
-
-// .contents {
-//   width: 100%;
-//   margin-left: 0;
-//   margin-right: 0;
-//   img {
-//     width: 100%;
-//     height: 180px;
-//     display: inline-block;
-//     margin-top: 0px;
-//     margin-bottom: 30px;
-//     position: relative;
-//   }
-//   p {
-//     position: absolute;
-//     z-index: 100;
-//     top: atuo;
-//     left: auto;
-//     color: #550000;
-//     font-weight: normal;
-//     font-size: 20px;
-//   }
-// }
-// .wrapper {
-// width: 100%;
-// margin-left: auto;
-// margin-right: auto;
-// }
-
-// .contents h5 {
-//   padding-top: 20px
-// }
-
-// .contents img .content-img {
-//   width: 100%;
-//   height: auto;
-//   display: inline-block;
-//   margin-top: 20px;
-// }
-
-// .contents a {
-//   display: inline-block;
-//   padding-top: 20px;
-// }
 
 //グループ
 .row-external {
@@ -291,9 +221,6 @@ img {
   p {
     font-size: 10px;
   }
-  // .badge {
-  //   font-size: 3px;
-  // }
   
   .contents {
     h4 {

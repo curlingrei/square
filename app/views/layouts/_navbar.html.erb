@@ -5,6 +5,9 @@
   </button>
   <div class="collapse navbar-collapse justify-content-end" id="menu">
     <div class="navbar-nav">
+        <%= link_to root_path, class: 'nav-item nav-link' do %>
+          <i class="fas fa-home"></i> トップページ
+        <% end %>
         <% if logged_in? %>
           <%= link_to current_user, class: 'nav-item nav-link' do %>
             <i class="far fa-user-circle"></i> マイページ
