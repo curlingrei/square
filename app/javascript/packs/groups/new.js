@@ -1,5 +1,4 @@
 import "stylesheets/groups/new.scss";
-require("@rails/ujs").start()
 $(function(){
     //画像選択
     $('.c-img').click(function(){

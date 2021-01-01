@@ -28,7 +28,7 @@
         <% end %>
         <% if @bookpost.user == current_user %>
           <%= link_to '', edit_bookpost_path, class: 'fas fa-edit' %>
-          <%= link_to '',@bookpost, method: :delete, data:{confirm: '本当に削除してよろしいですか?'}, class: 'fas fa-trash-alt' %>
+          <%= link_to '',@bookpost, method: :delete, data:{confirm: '本当にこの投稿を削除してよろしいですか?'}, class: 'fas fa-trash-alt' %>
         <% end %>
       </div>
     </div>
