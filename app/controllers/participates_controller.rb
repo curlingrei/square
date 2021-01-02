@@ -12,6 +12,7 @@ class ParticipatesController < ApplicationController
   end
 
   private
+
   def set_group
     @group = Group.find_by(id: params[:group_id])
   end
