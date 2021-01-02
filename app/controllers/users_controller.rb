@@ -76,5 +76,4 @@ class UsersController < ApplicationController
     set_user
     redirect_back(fallback_location: root_path) unless @user == current_user
   end
-
 end

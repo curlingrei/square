@@ -24,20 +24,19 @@ class GroupsController < ApplicationController
       flash[:light] = 'グループを作成しました'
       redirect_to @group
     else
-       render :new
+      render :new
     end
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
     if @group.update_attributes(groups_params)
       flash[:light] = 'グループの情報を更新しました'
       redirect_to @group
     else
-       flash[:light] = 'グループ情報の更新に失敗しました'
-       render :edit
+      flash[:light] = 'グループ情報の更新に失敗しました'
+      render :edit
     end
   end
 

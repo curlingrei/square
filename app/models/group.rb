@@ -7,12 +7,13 @@ class Group < ApplicationRecord
   validates :first_category, presence: true
   validates :target_number, presence: true
   validates :group_description, presence: true
-  validates :sample_or_upload, presence: {message: ''}
+  validates :sample_or_upload, presence: { message: '' }
   has_many :participates, dependent: :destroy
   has_many :groupcomments, dependent: :destroy
 
   private
-    def sample_or_upload
-      default_img_ptn.presence or image.presence
-    end
+
+  def sample_or_upload
+    default_img_ptn.presence or image.presence
+  end
 end
