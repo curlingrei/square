@@ -42,6 +42,13 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'rubocop', require: false
+  #AWS Deploy Capistrano
+  gem "capistrano", "~> 3.10", require: false
+  gem "capistrano-rails", "~> 1.6", require: false
+  gem 'capistrano-rbenv', '~> 2.2'
+  gem 'capistrano-rbenv-vars', '~> 0.1'
+  gem 'capistrano3-puma', '< 5'
+  #AWS Deploy Capistrano
 end
 
 group :test do
@@ -53,9 +60,10 @@ group :test do
 end
 
 # for production environment
-group :production do
-  gem 'pg'
-end
+#AWSにデプロイするのでコメントアウト
+# group :production do
+#   gem 'pg'
+# end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
