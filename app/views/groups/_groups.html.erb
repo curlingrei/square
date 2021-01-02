@@ -17,17 +17,17 @@
             <% else %>
               <% case group.default_img_ptn 
                 when 0 %>
-                <img src="/assets/reading.jpg">
+                <img src="/images/reading.jpg">
               <% when 1 %>
-                <img src="/assets/studying.jpg">
+                <img src="/images/studying.jpeg">
               <% when 2 %>
-                <img src="/assets/language.jpeg">
+                <img src="/images/language.jpeg">
               <% when 3 %>
-                <img src="/assets/programing.jpg">
+                <img src="/images/programing.jpeg">
               <% when 4 %>
-                <img src="/assets/plant.jpg">
+                <img src="/images/plant.jpeg">
               <% when 5 %>
-                <img src="/assets/landscape.jpg">
+                <img src="/images/landscape.jpg">
               <% end %>
             <% end %>
             <p class="badge badge-secondary w-100 mb-0"><%= group.first_category %></p>
@@ -45,7 +45,7 @@
             <% if group.user.avatar? %>
               <%= image_tag group.user.avatar.url(:icon) %>
             <% else %>
-              <img src="/assets/defalut_avatar.png">
+              <img src="/images/defalut_avatar.png">
             <% end %>
             <span><%= group.user.username %></span>
           </div>

@@ -12,7 +12,7 @@
       <% if @bookpost.bookimage? %>
         <%= image_tag @bookpost.bookimage.url %>
       <% else %>
-        <img src="/assets/No_image.png">
+        <img src="/images/No_image.png">
       <% end %>
     </div>
     <div class="row icons">
@@ -44,7 +44,7 @@
           <% if @bookpost.user.avatar? %>
             <%= image_tag @bookpost.user.avatar.url(:icon) %>
           <% else %>
-            <img src="/assets/defalut_avatar.png">
+            <img src="/images/defalut_avatar.png">
           <% end %>
             <%=@bookpost.user.username %>
          </div>
