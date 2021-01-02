@@ -61,9 +61,11 @@ end
 
 # for production environment
 #AWSにデプロイするのでコメントアウト
-# group :production do
-#   gem 'pg'
-# end
+group :production do
+  # gem 'pg'
+  #mysqlを追加
+  gem 'mysql2', '>= 0.4.4'
+end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
