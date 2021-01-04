@@ -7,5 +7,6 @@ if Rails.env.production?
       region: "ap-northeast-1"
     }
     config.fog_directory = "square-s3"
+    config.asset_host = "https://static.libooksquare.com"
   end
 end
