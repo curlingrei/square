@@ -81,3 +81,5 @@ gem 'carrierwave', '~> 2.0'
 gem 'rmagick'
 
 gem 'rails-i18n'
+
+gem "fog-aws"
