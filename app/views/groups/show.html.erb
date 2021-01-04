@@ -39,7 +39,7 @@
       <div class="row other-info">
         <div class="col-6 other-info-left">
           <% if @group.user.avatar? %>
-            <%= image_tag comment.user.avatar.url(:icon) %>
+            <%= image_tag @group.user.avatar.url(:icon) %>
           <% else %>
             <img src="/images/defalut_avatar.png">
           <% end %>
