@@ -20,8 +20,10 @@ SQUAREは私が住んでいる札幌のある図書館での利用を想定し�
 ## 使用技術
 
 * HTML/CSS/Bootstrap4/Javascript/JQuery/Ruby:2.7.2/Rails:6.0.3.4
-* Heroku
 * AWS(VPC/EC2/RDS(MySQL)/S3/ALB/Route53/CloudFront/ACM)
+* アプリケーションサーバー: puma
+* webサーバー: nginx
+
 
 ## インフラ構成
 
