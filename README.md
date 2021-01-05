@@ -24,7 +24,9 @@ SQUAREはある図書館での利用を想定して作成した対面でのマ�
 * Heroku
 * AWS(VPC/EC2/RDS(MySQL)/S3/ALB/Route53/CloudFront/ACM)
 
-* インフラ構成
+## インフラ構成
+
+![squareインフラ構成図 (1)](https://user-images.githubusercontent.com/45198828/103650171-f8a82f00-4fa2-11eb-9f81-4643f71a6a83.png)
 
 ## 機能一覧
 
