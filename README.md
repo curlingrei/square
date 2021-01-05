@@ -1,17 +1,15 @@
-# README
+# 基本情報
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+#### アプリ名
+SQUARE
 
-Things you may want to cover:
+#### URL
+http://libooksquare.com/
+
+#### github URL
 
 
-# SQUARE
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
 
 ## 概要
 SQUAREはある図書館での利用を想定して作成した対面でのマッチングを目標としたアプリケーションです。
@@ -24,7 +22,7 @@ SQUAREはある図書館での利用を想定して作成した対面でのマ�
 
 * HTML/CSS/Bootstrap4/Javascript/JQuery/Ruby:2.7.2/Rails:6.0.3.4
 * Heroku
-* AWS(VPC/EC2/RDS(MySQL)/S3/ELB/AutoScaling/Route53/CloudFront/ACM/)
+* AWS(VPC/EC2/RDS(MySQL)/S3/ALB/Route53/CloudFront/ACM)
 
 * インフラ構成
 
