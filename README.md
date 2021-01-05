@@ -9,8 +9,6 @@ http://libooksquare.com/
 #### github URL
 
 
-
-
 ## 概要
 SQUAREはある図書館での利用を想定して作成した対面でのマッチングを目標としたアプリケーションです。
 
@@ -28,24 +26,3 @@ SQUAREはある図書館での利用を想定して作成した対面でのマ�
 
 ![squareインフラ構成図 (1)](https://user-images.githubusercontent.com/45198828/103650171-f8a82f00-4fa2-11eb-9f81-4643f71a6a83.png)
 
-## 機能一覧
-
-* 
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
