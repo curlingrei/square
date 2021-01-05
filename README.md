@@ -1,4 +1,4 @@
-# 基本情報
+## 基本情報
 
 #### アプリ名
 SQUARE
@@ -7,6 +7,7 @@ SQUARE
 http://libooksquare.com/
 
 #### github URL
+https://github.com/curlingrei/square
 
 
 ## 概要
