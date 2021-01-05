@@ -1,20 +1,18 @@
-# README
+## 基本情報
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+#### アプリ名
+SQUARE
 
-Things you may want to cover:
+#### URL
+http://libooksquare.com/
 
+#### github URL
+https://github.com/curlingrei/square
 
-# SQUARE
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
 
 ## 概要
-SQUAREはある図書館での利用を想定して作成した対面でのマッチングを目標としたアプリケーションです。
+SQUAREは私が住んでいる札幌のある図書館での利用を想定して作成した対面でのマッチングを目標としたアプリケーションです。
+その図書館にもSQUAREという言葉が含まれているという点と、SQUAREには「広場」という意味があり、広場のような役割のアプリケーションになればと思い命名しました。
 
 ## このアプリケーションを作成した理由
 コロナウイルスの影響で対面で会う機会がものすごく減ってしまいました。だからこそ人と人とが交流を深めるために対面で会うということが重要であると感じました。
@@ -23,29 +21,12 @@ SQUAREはある図書館での利用を想定して作成した対面でのマ�
 ## 使用技術
 
 * HTML/CSS/Bootstrap4/Javascript/JQuery/Ruby:2.7.2/Rails:6.0.3.4
-* Heroku
-* AWS(VPC/EC2/RDS(MySQL)/S3/ELB/AutoScaling/Route53/CloudFront/ACM/)
+* AWS(VPC/EC2/RDS(MySQL)/S3/ALB/Route53/CloudFront/ACM)
+* アプリケーションサーバー: puma
+* webサーバー: nginx
 
-* インフラ構成
 
-## 機能一覧
+## インフラ構成
 
-* 
+![squareインフラ構成図 (1)](https://user-images.githubusercontent.com/45198828/103650171-f8a82f00-4fa2-11eb-9f81-4643f71a6a83.png)
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
