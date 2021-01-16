@@ -4,7 +4,7 @@
 SQUARE
 
 #### URL
-http://libooksquare.com/
+https://libooksquare.com/
 
 #### github URL
 https://github.com/curlingrei/square
